@@ -86,7 +86,7 @@ livery-player {
 
 See also: [MDN Sizing items in CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Sizing_items_in_CSS)
 
-When you use a fixed height like this the video contents of the player will be fit inside the available space based on the `Fit` mode configured in the Livery Portal for this stream (e.g: `CONTAIN` or `COVER` or ..).
+When you use a fixed height like this the video contents of the player will be fitted inside the available space based on the `Fit` mode configured in the Livery Portal for this stream (e.g: `CONTAIN` or `COVER` or ..).
 
 See also: [MDN object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
 
