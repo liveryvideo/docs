@@ -72,7 +72,7 @@ Please see the [LiveryPlayer](#liveryplayer) API documentation below for additio
 
 ### CSS
 
-The livery-player element is displayed as a `block`, e.g: using the full width available by default.
+The livery-player element is displayed as a `block`, i.e: using the full width available by default.
 
 If no height is specified it will use the video aspect ratio (default `16:9`) to determine the height intrinsically.
 
