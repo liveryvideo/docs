@@ -134,6 +134,7 @@ See the general [Usage](#usage) section above.
 | `latency`       | R   | `number`                                                                                                                | `NaN`       | End to end latency in seconds.                                                     |
 | `playbackState` | R   | `'BUFFERING'` \| `'ENDED'` \| `'FAST_FORWARD'` \| `'PAUSED'` \| `'PLAYING'` \| `'REWIND'` \| `'SEEKING'` \| `'SLOW_MO'` | `'PAUSED'`  | Playback state.<br />Dispatches: `livery-playback-change`                          |
 | `quality`       | R   | `string`                                                                                                                | `null`      | Active quality label.<br />Dispatches: `livery-quality-change`                     |
+| `streamConfig`  | R   | `Config`                                                                                                                | `undefined` | Stream config.                                                                     |
 | `streamPhase`   | R   | `'PRE'` \| `'LIVE'` \| `'POST'`                                                                                         | `'PRE'`     | Stream phase.<br />Dispatches: `livery-phase-change`                               |
 
 In addition there is an `engine` property, and a `debug` property, but these are meant for debugging purposes only. Their use is not supported.
