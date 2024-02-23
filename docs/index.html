@@ -27,13 +27,8 @@
     <div id="app"></div>
 
     <script>
-      const dev = window.location.origin === 'http://127.0.0.1:8080';
-
-      const fetchText = (url) =>
-        fetch(url, {
-          // From local dev server don't use headers to work around CORS
-          headers: dev ? {} : window.$docsify.requestHeaders,
-        }).then((response) => response.text());
+      const fetchText = (url, init) =>
+        fetch(url, init).then((response) => response.text());
 
       const deprecated = (path) =>
         `# Deprecated page\nPlease use the following path instead: [${path}](${path})`;
@@ -79,10 +74,11 @@
 
           // Work around notFoundPage not working with routerMode history and server returning index.html instead of 404
           '.*': (route, matched, next) => {
-            fetchText(`${route === '/' ? '/README' : route}.md`).then(
+            const init = { headers: window.$docsify.requestHeaders };
+            fetchText(`${route === '/' ? '/README' : route}.md`, init).then(
               (text) => {
                 if (text.startsWith('<!DOCTYPE html>')) {
-                  fetchText('_404.md').then(next);
+                  fetchText('_404.md', init).then(next);
                 } else {
                   next(text);
                 }
