@@ -11,12 +11,12 @@
     "lint": "markdownlint \"**/*.md\" && prettier \"**/*.{html,md}\" --check",
     "start": "live-server docs --entry-file=index.html"
   },
-  "dependencies": {
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "live-server": "^1.1.0",
-    "markdownlint-cli": "^0.32.0",
-    "prettier": "^2.7.1"
+    "markdownlint-cli": "^0.39.0",
+    "prettier": "^3.2.5"
   },
   "lint-staged": {
     "*.md": [
