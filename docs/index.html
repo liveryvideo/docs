@@ -27,18 +27,84 @@
     <div id="app"></div>
 
     <script>
+      const fetchText = (url, init) =>
+        fetch(url, init).then((response) => response.text());
+
+      const deprecated = (path) =>
+        `# Deprecated page\nPlease use the following path instead: [${path}](${path})`;
+
       window.$docsify = {
-        name: 'Livery Video Docs',
-        logo: 'logo.png',
-        routerMode: 'history',
-        loadSidebar: true,
-        subMaxLevel: 3,
-        search: {
-          namespace: 'livery-video-docs',
-          depth: 6,
+        alias: {
+          '/.*/_navbar.md': '/_navbar.md',
         },
+        auto2top: true,
+        loadNavbar: true,
+        logo: 'logo.png',
+        maxLevel: 3,
+        mergeNavbar: true,
+        name: 'Livery Video Docs',
+        nameLink: '/',
+        relativePath: true,
         requestHeaders: {
           'cache-control': 'no-cache',
+        },
+        routerMode: 'history',
+        routes: {
+          // Load markdown from one of our @liveryvideo/* NPM packages
+          '/npm/(.*)': (route, matched, next) => {
+            let path = matched[1];
+            if (path.endsWith('/')) {
+              path += 'index';
+            }
+            fetchText(
+              `https://cdn.jsdelivr.net/npm/@liveryvideo/${path}.md`,
+            ).then(next);
+          },
+
+          // Deprecated pages
+          '/interactive-bridge-changelog': () =>
+            deprecated('/npm/interactive-bridge/CHANGELOG'),
+          '/interactive-sdk': () => deprecated('/interactive-bridge'),
+          '/interactive-sdk-changelog': () =>
+            deprecated('/npm/interactive-bridge/CHANGELOG'),
+          '/web-player-changelog': () => deprecated('/npm/player/CHANGELOG'),
+          '/web-sdk': () => deprecated('/web-player'),
+          '/web-sdk-changelog': () => deprecated('/npm/player/CHANGELOG'),
+
+          // Work around notFoundPage not working with routerMode history and server returning index.html instead of 404
+          '.*': (route, matched, next) => {
+            const init = { headers: window.$docsify.requestHeaders };
+            fetchText(`${route === '/' ? '/README' : route}.md`, init).then(
+              (text) => {
+                if (text.startsWith('<!DOCTYPE html>')) {
+                  fetchText('_404.md', init).then(next);
+                } else {
+                  next(text);
+                }
+              },
+            );
+          },
+        },
+        search: {
+          depth: 6,
+          namespace: 'livery-video-docs',
+          paths: [
+            // Make sure to add all paths that should be searchable here
+            '/android-sdk',
+            '/customer-interactive-api',
+            '/customer-video-api',
+            '/embed',
+            '/frictionless-login',
+            '/guides',
+            '/interactive-bridge',
+            '/interactive-portal',
+            '/ios-sdk',
+            '/README',
+            '/security',
+            '/video_ingest',
+            '/video-portal',
+            '/web-player',
+          ],
         },
       };
     </script>
