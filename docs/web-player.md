@@ -3,16 +3,14 @@
 [![npm package](https://img.shields.io/npm/v/@liveryvideo/player.svg?logo=npm)](https://www.npmjs.com/package/@liveryvideo/player)
 [![conventional CHANGELOG](https://img.shields.io/badge/conventional-CHANGELOG-FE5196.svg?logo=conventionalcommits)](/npm/player/CHANGELOG)
 [![tsdoc API](https://img.shields.io/badge/tsdoc-API-3178C6.svg?logo=typescript)](/npm/player/dist/)
-[![Lit built with](https://img.shields.io/badge/Lit-Elements-324FFF.svg?logo=lit)](https://lit.dev/)
+[![Lit Elements](https://img.shields.io/badge/Lit-Elements-324FFF.svg?logo=lit)](https://lit.dev/)
 [![license MIT](https://img.shields.io/npm/l/@liveryvideo/player.svg?color=808080&logo=unlicense)](https://cdn.jsdelivr.net/npm/@liveryvideo/player/LICENSE)
 
 Livery video player for use in web browsers.
 
 ?> Demo can be found at: [demo.liveryvideo.com](https://demo.liveryvideo.com) ([source](https://github.com/liveryvideo/demo-web)).
 
-?> Detailed documentation of the exported API is included in the NPM package and can be viewed here: [API](/npm/player/dist/).
-
-Please refer to the [Livery Management Portal](https://video-encoder-director.playtotv.com/) for stream configuration options.
+Please refer to the [Livery Video Portal](video-portal.md) for stream configuration options.
 
 ## Basic Usage
 
@@ -92,6 +90,14 @@ See also: [MDN Sizing items in CSS](https://developer.mozilla.org/en-US/docs/Lea
 When you use a fixed height like this the video contents of the player will be fitted inside the available space based on the `Fit` mode configured in the Livery Portal for this stream (e.g: `CONTAIN` or `COVER` or ..).
 
 See also: [MDN object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
+
+## [API](/npm/player/dist/)
+
+Detailed documentation of the exported API is generated and included in the NPM package and can be viewed here: [API](/npm/player/dist/)
+
+## [CHANGELOG](/npm/player/CHANGELOG)
+
+A detailed changelog of the package is generated and included in the NPM package and can be viewed here: [CHANGELOG](/npm/player/CHANGELOG)
 
 ## Custom Controls
 

@@ -1,4 +1,4 @@
-# Livery Video Interactive Bridge
+# Livery Interactive Bridge
 
 [![npm package](https://img.shields.io/npm/v/@liveryvideo/interactive-bridge.svg?logo=npm)](https://www.npmjs.com/package/@liveryvideo/interactive-bridge)
 [![conventional CHANGELOG](https://img.shields.io/badge/conventional-CHANGELOG-FE5196.svg?logo=conventionalcommits)](/npm/interactive-bridge/CHANGELOG)
@@ -6,11 +6,13 @@
 [![Lit Elements](https://img.shields.io/badge/Lit-Elements-324FFF.svg?logo=lit)](https://lit.dev/)
 [![license MIT](https://img.shields.io/npm/l/@liveryvideo/interactive-bridge.svg?color=808080&logo=unlicense)](https://cdn.jsdelivr.net/npm/@liveryvideo/interactive-bridge/LICENSE)
 
-Bridge for communicating between a Livery Video Player and the interactive layer page shown within that.
+Bridge for communicating between a Livery Video Player and the interactive layer shown within that.
 
-?> Test page for use by Livery Video Players: [interactive-bridge.liveryvideo.com](https://interactive-bridge.liveryvideo.com). Or you can test with a mock player bridge and [interactive element](https://interactive-bridge.liveryvideo.com/?mock) or [interactive iframe](https://interactive-bridge.liveryvideo.com/?mock=iframe).
+## Demo
 
-?> Detailed documentation of the exported API is included in the NPM package and can be viewed here: [API](/npm/interactive-bridge/dist/).
+- [Test page for use by Livery Video Players](https://interactive-bridge.liveryvideo.com)
+- [Test with a mock player bridge and interactive element](https://interactive-bridge.liveryvideo.com/?mock)
+- [Test with a mock player bridge and interactive iframe](https://interactive-bridge.liveryvideo.com/?mock=iframe)
 
 ## Support
 
@@ -39,3 +41,11 @@ Or load from [jsdelivr](https://jsdelivr.com):
 ```
 
 ?> Replace the version (`x.y.z`) above by the version of the SDK that you wish to use. E.g: update to latest stable release periodically. Please see the [CHANGELOG](/npm/interactive-bridge/CHANGELOG) for details.
+
+## [API](/npm/interactive-bridge/dist/)
+
+Detailed documentation of the exported API is generated and included in the NPM package and can be viewed here: [API](/npm/interactive-bridge/dist/)
+
+## [CHANGELOG](/npm/interactive-bridge/CHANGELOG)
+
+A detailed changelog of the package is generated and included in the NPM package and can be viewed here: [CHANGELOG](/npm/interactive-bridge/CHANGELOG)
