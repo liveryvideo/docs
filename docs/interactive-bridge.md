@@ -42,6 +42,20 @@ Or load from [jsdelivr](https://jsdelivr.com):
 
 ?> Replace the version (`x.y.z`) above by the version of the SDK that you wish to use. E.g: update to latest stable release periodically. Please see the [CHANGELOG](/npm/interactive-bridge/CHANGELOG) for details.
 
+## Usage
+
+The main class to be used from this package is the InteractiveBridge:
+
+```JS
+import { InteractiveBridge } from '@liveryvideo/interactive-bridge';
+// The playerBridge will be provided to you as interactive element as interactive webview or iframe
+const bridge = new InteractiveBridge(playerBridge || '*');
+// To prevent cross site security issues:
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage#security_concerns
+// replace the `'*'` origin above with the origin of the page that the Livery Player is on
+bridge.getAppName().then(appName => window.alert(`appName: ${appName}`));
+```
+
 ## [API](/npm/interactive-bridge/dist/)
 
 Detailed documentation of the exported API is generated and included in the NPM package and can be viewed here: [API](/npm/interactive-bridge/dist/)
