@@ -224,11 +224,10 @@ Close the window and you can add additional attributes, such as the dimensions o
 # How to live stream with Livery
 
 1. For ingesting video into Livery, enter the Ingest URL and Stream Key in your preferred streaming tool (e.g. OBS, vMix, StreamYard)
-2. Check our recommended settings at docs.liveryvideo.com for recommended configurations
+2. Check our [recommended settings](https://docs.liveryvideo.com/video_ingest?id=mixer-soft-and-hardware) at docs.liveryvideo.com for recommended configurations
 3. Click the “Start streaming” button in the streaming tool that you are using
 4. Our cloud encoder automatically starts
-5. After ~60 seconds start-up time, the video will be visible in the player.
-* he player URL is provided to you or can be specified by the stream ID https://embed.liveryvideo.com/?id=...
+5. After ~60 seconds start-up time, the video will be visible in the player. (The player URL is provided to you or can be specified by the stream ID https://embed.liveryvideo.com/?id=...)
 
 # How to create an interactive broadcast
 
