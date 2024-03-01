@@ -234,28 +234,47 @@ Close the window and you can add additional attributes, such as the dimensions o
 
 1. You receive an email for account activation that enables you to access the Livery portal.
 2. In the portal, press the button +CREATE in the middle of your screen or press the button +ADD in the top right corner to add a broadcast.
+
 <img src="guides_images/qsg_1.png" width="500"/>
+
 3. Configure the broadcast details and choose the features you would like to activate (can be changed later)	
 4. Click on ADD at the top right corner to proceed
-   <img src="guides_images/qsg_2.png" width="500"/>
+
+<img src="guides_images/qsg_2.png" width="500"/>
+
 5. Press the +CREATE button in the center of your screen to configure your first interaction
+
 <img src="guides_images/qsg_3.png" width="500"/>
+
 6. Choose the interaction you would like to add from the dropdown menu.
 7. Fill out the required fields marked with an asterisk (*).
+
 <img src="guides_images/qsg_4.png" width="500"/>
+
 8. Press the ADD button at the top right corner to add the interactive feature to the timeline.
 9. Press the ADD INTERACTION button at the top of the timeline to add more interactions.
+
 <img src="guides_images/qsg_5.png" width="500"/>
+
 10. Click on START BROADCAST on the top right corner to display the interactive overlay in the player (interactions can be created at any time also during the live stream).
 11. Broadcast Settings can be changed at any time by clicking on SETTINGS ICON on the top of the screen.
+
 <img src="guides_images/qsg_6.png" width="500"/>
+
 12. Press PLAY to show the interaction in the player, e.g. asking a trivia question to the users
+
 <img src="guides_images/qsg_7.png" width="500"/>
+
 13. You can find all OPEN interactions on the right side under ACTIVE INTERACTIONS
 -- you can manually STOP an interaction at any time or wait until the timer is up (if configured)
 -- click on the arrow to see real-time results
+
 <img src="guides_images/qsg_8.png" width="500"/>
+
 <img src="guides_images/qsg_9.png" width="500"/>
+
 14. Additional features, such as Q&A overview and Presenter View, can be found next to the Broadcast Settings. Click on the THREE DOTS in the top right corner to open the menu.
+
 <img src="guides_images/qsg_10.png" width="500"/>
+
 15. Press STOP BROADCAST on the top right corner when you want to end the interactive broadcast (only the interactive overlay will be disabled, the ingested video will still be shown in the player).
