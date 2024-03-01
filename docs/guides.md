@@ -228,7 +228,7 @@ Close the window and you can add additional attributes, such as the dimensions o
 3. Click the “Start streaming” button in the streaming tool that you are using
 4. Our cloud encoder automatically starts
 5. After ~60 seconds start-up time, the video will be visible in the player.
-- he player URL is provided to you or can be specified by the stream ID https://embed.liveryvideo.com/?id=...
+* he player URL is provided to you or can be specified by the stream ID https://embed.liveryvideo.com/?id=...
 
 # How to create an interactive broadcast
 
@@ -266,8 +266,8 @@ Close the window and you can add additional attributes, such as the dimensions o
 <img src="guides_images/qsg_7.png" width="500"/>
 
 13. You can find all OPEN interactions on the right side under ACTIVE INTERACTIONS
-- you can manually STOP an interaction at any time or wait until the timer is up (if configured)
-- click on the arrow to see real-time results
+* you can manually STOP an interaction at any time or wait until the timer is up (if configured)
+* click on the arrow to see real-time results
 
 <img src="guides_images/qsg_8.png" width="500"/>
 
