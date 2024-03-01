@@ -46,7 +46,7 @@ Or load from [jsdelivr](https://jsdelivr.com):
 
 The main class to be used from this package is the InteractiveBridge:
 
-```JS
+```js
 import { InteractiveBridge } from '@liveryvideo/interactive-bridge';
 // The playerBridge will be provided to you as interactive element as interactive webview or iframe
 const bridge = new InteractiveBridge(playerBridge || '*');

@@ -157,7 +157,7 @@ Next.js makes use of server side rendering, which the Livery Web SDK does not cu
 
 Note that many of the examples that Next.js provides use a statement of the form `dynamic( import(...) )`. The `dynamic()` function is used for importing React components and should not be used for importing `@liveryvideo/player`. The code below illustrates basic usage with Next.js.
 
-```javascript
+```js
 // do not import('@liveryvideo/player') here
 
 function MyComponent() {
