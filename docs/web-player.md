@@ -99,11 +99,19 @@ Detailed documentation of the exported API is generated and included in the NPM 
 
 A detailed changelog of the package is generated and included in the NPM package and can be viewed here: [CHANGELOG](/npm/player/CHANGELOG)
 
-## Custom Controls
+## Guides
 
-The default player controls can be disabled by changing the `LiveryPlayer` `controlsDisabled` attribute to `true` directly or via the `InteractiveBridge` `setControlsDisabled()` method.
+### Frictionless Login
 
-You can subsequently implement custom controls using the `LiveryPlayer` or `InteractiveBridge` API.
+To have the interactive layer authenticate you can change the [LiveryPlayer interactiveAuth property](/npm/player/dist/classes/LiveryPlayer?id=interactiveauth) to a JWT token `string` or claims `object` value. Inversely you can change it to an `undefined` value to have the interactive layer logout.
+
+When this is used the interactive layer should specify a callback to the [InteractiveBridge option](/npm/interactive-bridge/dist/classes/InteractiveBridge?id=parameters) `{ handleAuth }`. That will then be called with the value of the `LiveryPlayer` `interactiveAuth` property whenever that changes. And in turn should take care of corresponding authentication within the interactive layer.
+
+### Custom Controls
+
+The default player controls can be disabled by changing the [LiveryPlayer controlsDisabled attribute](/npm/player/dist/classes/LiveryPlayer?id=controlsdisabled) to `true` or by specifying [InteractiveBridge option](/npm/interactive-bridge/dist/classes/InteractiveBridge?id=parameters) `{ controlsDisabled: true }`.
+
+You can subsequently implement custom controls using the [LiveryPlayer](/npm/player/dist/) or [InteractiveBridge](/npm/interactive-bridge/dist/) API.
 
 General guidelines based on the `LiveryPlayer` API (the `InteractiveBridge` API is similar):
 
@@ -149,8 +157,6 @@ More specifically, from bottom to top the following layers/controls should be sh
   - Livery player `version` from package
   - While `features.contact && config?.controls.contact` show a contact form bound to `submitUserFeedback()`
 
-## Integrations
-
 ### Next.js
 
 Next.js makes use of server side rendering, which the Livery Web SDK does not currently support. However, users of Next.js can still use the SDK by making use of Next.js’s support for [dynamic imports](https://nextjs.org/docs/advanced-features/dynamic-import) inside a [React Effect Hook](https://reactjs.org/docs/hooks-effect.html) or in a [React class component's `componentDidMount` lifecycle method](https://reactjs.org/docs/react-component.html#componentdidmount). When used in combination, this ensures the module being imported is evaluated at runtime on the client.
@@ -171,12 +177,12 @@ function MyComponent() {
 }
 ```
 
-## Q&A
+## FAQ
 
-**Why does the stream start muted on some devices?**
+### _Why does the player start muted?_
 
-_With chrome://media-engagement/ you can check the ranking of the page and which can determine whether it is allowed to start unmuted. When “is high” is YES that site is allowed to autoplay unmuted._
+In Chrome, on the [Media Engagement](chrome://media-engagement/) page you can check whether the player page has a `Score` which is marked as `Is High` `Yes`. Otherwise, so called "autoplay" (automatic starting of unmuted playback) will not be allowed on that page and our player will fall back to starting playback muted. In that case a dialog will be shown to manually unmute playback. This engagement `Score` is based on whether the player is shown clearly on the page and on whether the user previously has been playing muted or unmuted. Other browsers function similarly and sometimes also allow users to manually enable/disable autoplay.
 
-**Autoplay does not work on mobile?**
+### _Why doesn't the player start at all?_
 
-_The autoplay feature can be blocked by the browser when the device is in low-power mode. Check if the device is in low-power mode or if you've blocked autoplay for this page or altogether._
+In Safari, when the device is in low-power mode, the "autoplay" mentioned in the previous question is entirely disabled and even the muted fallback will not be allowed. Or you could have manually configured Safari to disallow autoplay. In such cases the player will show a dialog to manually start playback.
