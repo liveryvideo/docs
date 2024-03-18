@@ -179,10 +179,14 @@ function MyComponent() {
 
 ## FAQ
 
-### _Why does the player start muted?_
+### Autoplay
 
-In Chrome, on the [Media Engagement](chrome://media-engagement/) page you can check whether the player page has a `Score` which is marked as `Is High` `Yes`. Otherwise, so called "autoplay" (automatic starting of unmuted playback) will not be allowed on that page and our player will fall back to starting playback muted. In that case a dialog will be shown to manually unmute playback. This engagement `Score` is based on whether the player is shown clearly on the page and on whether the user previously has been playing muted or unmuted. Other browsers function similarly and sometimes also allow users to manually enable/disable autoplay.
+**_Why doesn't the player automatically start (unmuted)?_**
 
-### _Why doesn't the player start at all?_
+Browsers keep track of user engagement with video players on pages, scoring higher when the video is shown clearly and when it is allowed to play unmuted by the user.
 
-In Safari, when the device is in low-power mode, the "autoplay" mentioned in the previous question is entirely disabled and even the muted fallback will not be allowed. Or you could have manually configured Safari to disallow autoplay. In such cases the player will show a dialog to manually start playback.
+In Chrome you can check this on the [Media Engagement](chrome://media-engagement/) page; when the player page has a `Score` which is marked as `Is High` `Yes` then unmuted autoplay is allowed.
+
+Our player attempts to automatically start playback unmuted, but if for example the engagement score is too low that will not be allowed by the browser. In that case the player attempts to automatically start playback _muted_ instead and show a dialog to manually unmute.
+
+In some cases a browser (p.e: Safari in low-power mode) or user (using browser configuration) might not allow autoplay at all (not even muted) in which case a dialog will be shown to manually start playback.
