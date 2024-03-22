@@ -1,4 +1,4 @@
-<img width="1648" alt="image" src="https://github.com/liveryvideo/docs/assets/88879259/f2ab38ee-a473-4807-8d70-c2e9396b3ca6"># Add streaming support (SRT)
+# Add streaming support (SRT)
 
 Third-party tools are required to ingest a live stream via SRT or RTMP into the Livery platform. While Livery does not provide a mobile streaming library to enable live transmission from mobile devices via RTMP or SRT, there are multiple alternatives available. The following guide explains how to add a transmission library to your application, enabling your customers to stream directly from their native application.
 
