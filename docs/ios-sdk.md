@@ -35,7 +35,7 @@ $ gem install cocoapods
 To integrate Livery SDK into your Xcode project using CocoaPods, specify it in your Podfile, as follows:
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 source 'https://github.com/exmg/livery-sdk-ios-podspec.git'
 
 target 'MyProject' do
