@@ -139,8 +139,9 @@ More specifically, from bottom to top the following layers/controls should be sh
 - While `!!config && muted && (!config.controls.mute || userMuted !== 'MUTED')` show a dialog with a big unmute button
   - Where `userMuted: 'UNSPECIFIED' | 'MUTED' | 'UNMUTED'` corresponding to your use of `setMuted()`
     - The player persists this to storage and so should you
-- While `config?.streamPhase === 'LIVE' && paused && (!config.controls.play || userPaused !== 'PAUSED')` show a dialog with a big play button
+- While `config?.streamPhase === 'LIVE' && playbackState === 'PAUSED' && (!config.controls.play || userPaused !== 'PAUSED')` show a dialog with a big play button
   - Where `userPaused: 'UNSPECIFIED' | 'PAUSED' | 'UNPAUSED'` corresponding to your use of `pause()` and `play()`
+- While `config?.streamPhase === 'LIVE' && playbackState === 'ENDED'` show a dialog with message: "Stream unavailable"
 - While `features.scrubber && config?.streamPhase === 'LIVE' && config.controls.scrubber` show scrubber:
   - _(to be specified, e.g: using playback details and `seek()`)_
 - While `config?.streamPhase === 'LIVE' && config.controls.play` show a pause toggle button using `paused` and `play()` or `pause()`
