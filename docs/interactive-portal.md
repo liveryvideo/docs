@@ -18,7 +18,6 @@ The interactions can have the following phases, all managed by the operators in 
 - Result: the results are published for the end-users
 - Closed: the interaction is closed, the end-users can no longer see them in the interaction list 
 
-Interactions are grouped into the following packs:
 
 #### Poll and Vote
 
@@ -31,6 +30,8 @@ Key features:
 
 - Up to 4 answers to the questions
 - Time limit for answers
+
+##### Answer visuals
 
 #### Trivia
 
@@ -86,6 +87,8 @@ Key features:
 - Quick announcement
 - Image upload
 - Button with external url
+
+##### Picture in picture
 
 #### Live reaction
 <!--
@@ -211,12 +214,17 @@ Key features:
 - Attached rating
 - Multiple attributes (size, color, etc.)
 - Copy change of the Buy button
+
+##### Picture in picture
   
+#### Webclip
+
+#### Social share (coming soon)
 
 ### Management features
 
 These powerful management features give you the opportunity to configure your broadcast, target it for your audience and provide you data and analytics to make your broadcast event even better.
-The features are Broadcast management, Account management, Currency handling, Theming, Audiences, Show/Hide pages or features, Presenter view and Data export. All these management features, real-time interaction results and analytics are provided by our web-based management system.
+The features are Broadcast management, Account management, Currency handling, Theming, Show/Hide pages or features, Presenter view and Data export. All these management features, real-time interaction results and analytics are provided by our web-based management system.
 
 #### Broadcast management
 
