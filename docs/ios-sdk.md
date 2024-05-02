@@ -26,6 +26,20 @@ machine sdk-ios-binaries.liveryvideo.com
   password YOUR_PASSWORD
 ```
 
+#### About Livery and its dependencies
+
+Livery uses AWSPinpoint, Sentry, Kronos, Lottie and GoogleCast SDKs as dependencies.
+
+In both CocoaPods and Swift Package Manager installations AWSPinpoint is linked dynamically.
+
+However GoogleCast is linked statically, along with its dependency Protobuf. This has to be with the fact that GoogleCast SDK is not available via Swift Package Manager and the only oficial way to use it is via CocoaPods using Google's static xcframework.
+
+Sentry, Kronos and Lottie are linked dynamically in the CocoaPods xcframework and statically in the Swift Package Manager xcframework.
+
+If your application uses one of Sentry, Kronos or Lottie we advise to use the CocoaPods installation method to avoid duplicated symbols issues.
+
+Livery and its dependencies such as Sentry, Kronos are Lottie are built with `BUILD_LIBRARY_FOR_DISTRIBUTION=YES` flag and if you are using coocapods please enabled this flag to this dependencies as well, see [CocoaPods](#cocoapods).
+
 #### CocoaPods
 
 [CocoaPods](https://cocoapods.org/) is a dependency manager for Swift and Objective-C Cocoa projects. You can install it with the following command:
@@ -42,6 +56,22 @@ source 'https://github.com/exmg/livery-sdk-ios-podspec.git'
 
 target 'MyProject' do
   pod "Livery", "3.0.0"
+end
+```
+
+Please also add the following to your Podfile to enable the `BUILD_LIBRARY_FOR_DISTRIBUTION` flag for Sentry, Kronos and Lottie:
+
+```ruby
+post_install do |installer|
+  installer.generated_projects.each do |project|
+    project.targets.each do |target|
+      if ['Kronos', 'lottie-ios', 'Sentry'].include? target.name
+        target.build_configurations.each do |config|
+          config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+        end
+      end
+    end
+  end
 end
 ```
 
@@ -70,7 +100,7 @@ import Livery
 
 let playerView: LiveryPlayerView
 
-func initializeLiverySDK(streamId: String = "yourStreamId") async {
+func start(streamId: String = "yourStreamId") async {
   // 1. Initialize the SDK
   // (See LiverySDK initialize() method below for more options)
   do {
@@ -114,15 +144,26 @@ For a sample application code utilizing these minimal steps see the LiveryExampl
 The SDK `initialize()` method must be called before calling `LiveryPlayerView.createPlayer()`.
 
 ```swift
-LiverySDK.initialize(streamId: String, configType: String = LiverySDK.defaultConfigType, completionQueue: DispatchQueue = .main, completion: (LiveryErrors) -> Void)
+LiverySDK.initialize(
+    streamId: String,
+    configType: String = LiverySDK.defaultConfigType,
+    completionQueue: DispatchQueue = .main,
+    completion: (LiveryErrors) -> Void
+)
 // or
-try await LiverySDK.initialize(streamId: String, configType: String = LiverySDK.defaultConfigType)
+try await LiverySDK.initialize(
+    streamId: String,
+    configType: String = LiverySDK.defaultConfigType
+)
 ```
 
 It is also possible to define `LIVERY_STREAM_ID` and `LIVERY_CONFIG_TYPE` in your's app `Info.plist` file and use `LiverySDK.initialize()` without passing the `streamId` parameter.
 
 ```swift
-LiverySDK.initialize(completionQueue: DispatchQueue = .main, completion: (LiveryErrors) -> Void)
+LiverySDK.initialize(
+    completionQueue: DispatchQueue = .main,
+    completion: (LiveryErrors) -> Void
+)
 // or
 try await LiverySDK.initialize()
 ```
@@ -155,20 +196,20 @@ enum LiveryErrors: LocalizedError {
 
 ### SDK Properties
 
-| Name                   | Type                                           | Default                        | Description                                                          |
-| ---------------------- | ---------------------------------------------- | ------------------------------ | -------------------------------------------------------------------- |
-| `sdkVersion`           | `String`                                       |                                | A getter to retrieve the SDK version.                                |
-| `enableSentrySDK`      | `Bool`                                         | `true`                         | A Bool which enables the use of the `SentrySDK` instance.            |
-| `audioSessionSettings` | [`LivertAudioSessionSettings`](#audio-session) | `LivertAudioSessionSettings()` | Property to store the `AVAudioSession` settings.                     |
-| `minimumDeviceSpace`   | `Int`                                          | `20000000`                     | Minimum device space in bytes required for the SDK to work properly. |
+| Name                                   | Type                                           | Default                        | Description                                                                          |
+| -------------------------------------- | ---------------------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------ |
+| `sdkVersion`                           | `String`                                       |                                | A getter to retrieve the SDK version.                                                |
+| `disableSentryStaticMethodsUsage`      | `Bool`                                         | `false`                        | A Bool which disabled `SentrySDK` static methos usage. A SentryHub is still created. |
+| `audioSessionSettings`                 | [`LivertAudioSessionSettings`](#audio-session) | `LivertAudioSessionSettings()` | Property to store the `AVAudioSession` settings.                                     |
+| `minimumDeviceSpace`                   | `Int`                                          | `20000000`                     | Minimum device space in bytes required for the SDK to work properly.                 |
 
-#### enableSentrySDK
+#### disableSentryStaticMethodsUsage
 
-If set to **true** Livery will use the `SentrySDK` instance to track events, handled errors and crashes.
+By default Livery will use the `SentrySDK` to track events, handled errors and crashes.
 
-**Warning**: If your application uses Sentry too it will override its configuration.
+**Warning**: If your application uses Sentry too you can disable Livery's Sentry usage by setting this property to **true**.
 
-If set to **false** Livery will setup a custom `SentryHub` object that will only track events and handled errors.
+If set to **true** Livery will setup a custom `SentryHub` object that will only track events and handled errors.
 This will not override your Sentry configuration.
 
 #### audioSessionSettings
@@ -255,23 +296,23 @@ These are the `LiveryControlsOptions` properties to control the controls visibil
 
 The following properties are exposed by LiveryPlayerView:
 
-| Name                        | Type                                                                                            | Write | Description                                                                                     |
-| --------------------------- | ----------------------------------------------------------------------------------------------- | ----- | ----------------------------------------------------------------------------------------------- |
-| `activeQuality`             | [`LiveryQuality`](#player-media-quality)                                                        | No    | Active Media Quality. Emits: `activeQualityDidChange`                                           |
-| `akamaiLongToken`           | `String`                                                                                        | Yes   | Defines an access token to use to be able to see a stream that uses Akamai’s Token Auth feature |
-| `buffer`                    | `Int64`                                                                                         | No    | Size of buffer, ahead of current position, in milliseconds. Emits: `progressDidChange`          |
-| `currentSource`             | `URL`                                                                                           | No    | Current media source. Emits: `sourceDidChange` URL.                                             |
-| `currentTime`               | `Int64`                                                                                         | No    | Current playback time position in milliseconds. Emits: `timeDidUpdate`                               |
-| `delegate`                  | [`LiveryPlayerDelegate`](#player-events)                                                        | Yes   | Protocol to implement to get player events                                                      |
-| `error`                     | `Error`                                                                                         | No    | Most recent unrecovered error. Emits: `playerDidFail`, `playerDidRecover`                       |
-| `interactiveBridgeDelegate` | [`LiveryInteractiveBridgeCustomCommandDelegate`](#liveryinteractivebridgecustomcommanddelegate) | Yes   | Protocol to implement to get custom messages from the interactive layer                         |
-| `interactiveURL`            | `URL`                                                                                           | Yes   | The interactive layer URL                                                                       |
-| `latency`                   | `Int64`                                                                                         | No    | End to end latency in milliseconds. Emits: `progressDidChange`                                  |
-| `muted`                     | `Bool`                                                                                          | Yes   | If true then audio is muted. Emits: `volumeDidChange`.                                          |
-| `playbackState`             | [`LiveryPlaybackState`](#player-types)                                                          | No    | Playback state: .none / .buffering / .playing / .paused / .ended Emits: `playbackStateDidChange`.           |
-| `qualities`                 | `[LiveryQuality]`                                                                               | No    | Array of Available Media Qualities. Emits: `qualitiesChange`.                                   |
-| `selectedQuality`           | [`LiveryQuality`](#player-media-quality)                                                        | Yes   | Selected Media Quality. Emits: `selectedQualityDidChange`                                       |
-| `timeOffset`                | `Int64`                                                                                         | No    | Local device time offset in milliseconds.                                                       |
+| Name                        | Type                                                                                            | Write | Description                                                                                       |
+| --------------------------- | ----------------------------------------------------------------------------------------------- | ----- | ------------------------------------------------------------------------------------------------- |
+| `activeQuality`             | [`LiveryQuality`](#player-media-quality)                                                        | No    | Active Media Quality. Emits: `activeQualityDidChange`                                             |
+| `akamaiLongToken`           | `String`                                                                                        | Yes   | Defines an access token to use to be able to see a stream that uses Akamai’s Token Auth feature   |
+| `buffer`                    | `Int64`                                                                                         | No    | Size of buffer, ahead of current position, in milliseconds. Emits: `progressDidChange`            |
+| `currentSource`             | `URL`                                                                                           | No    | Current media source. Emits: `sourceDidChange` URL.                                               |
+| `currentTime`               | `Int64`                                                                                         | No    | Current playback time position in milliseconds. Emits: `timeDidUpdate`                            |
+| `delegate`                  | [`LiveryPlayerDelegate`](#player-events)                                                        | Yes   | Protocol to implement to get player events                                                        |
+| `error`                     | `Error`                                                                                         | No    | Most recent unrecovered error. Emits: `playerDidFail`, `playerDidRecover`                         |
+| `interactiveBridgeDelegate` | [`LiveryInteractiveBridgeCustomCommandDelegate`](#liveryinteractivebridgecustomcommanddelegate) | Yes   | Protocol to implement to get custom messages from the interactive layer                           |
+| `interactiveURL`            | `URL`                                                                                           | Yes   | The interactive layer URL                                                                         |
+| `latency`                   | `Int64`                                                                                         | No    | End to end latency in milliseconds. Emits: `progressDidChange`                                    |
+| `muted`                     | `Bool`                                                                                          | Yes   | If true then audio is muted. Emits: `volumeDidChange`.                                            |
+| `playbackState`             | [`LiveryPlaybackState`](#player-types)                                                          | No    | Playback state: .none / .buffering / .playing / .paused / .ended Emits: `playbackStateDidChange`. |
+| `qualities`                 | `[LiveryQuality]`                                                                               | No    | Array of Available Media Qualities. Emits: `qualitiesChange`.                                     |
+| `selectedQuality`           | [`LiveryQuality`](#player-media-quality)                                                        | Yes   | Selected Media Quality. Emits: `selectedQualityDidChange`                                         |
+| `timeOffset`                | `Int64`                                                                                         | No    | Local device time offset in milliseconds.                                                         |
 
 **Note**: LiveryPlayerView properties are optional and will return `nil` if called before `createPlayer`.
 
