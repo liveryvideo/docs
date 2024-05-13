@@ -189,27 +189,6 @@ Both option 2 and 3 have an invisible link, so when your contacts receive the em
 
 Finalize your email and send out the campaign. Each contact will now receive an email with a unique and personalized URL. Clicking on this link will load the stream and automatically register the user, with a profile containing all the information included in the URL.
 
-# Wix site in combination with Livery
-The Livery video player can be added to a [Wix](https://www.wix.com/) powered website. The following guide explains in 4 steps how to add the player. 
-
-Step 1: When editing a webpage, choose Add → Embed Code → Popular Embeds → Custom Element 
-
-<img src="guides_images/wix1.png" width="500"/>
-
-Step 2: Click on "choose source" and add the server URL "https://cdn.jsdelivr.net/npm/@liveryvideo/player@X.Y.Z" as well as the tag name "livery-player". The latest player version is: 
-[![NPM package](https://img.shields.io/npm/v/@liveryvideo/player)](https://www.npmjs.com/package/@liveryvideo/player)
-
-<img src="guides_images/wix2.png" width="500"/>
-
-Step 3:Close the window and “add attributes”. Here you have to enter the “streamid” that you can find in the video portal or after request.
-
-<img src="guides_images/wix3.png" width="500"/>
-
-Step 4: Close the window and you can add additional attributes, such as the dimensions of the player, as well. More information can be found at official Wix guidelines: https://support.wix.com/en/article/wix-editor-adding-a-custom-element-to-your-site
-
-<img src="guides_images/wix4.png" width="500"/>
-
-
 # How to live stream with Livery
 
 1. For ingesting video into Livery, enter the Ingest URL and Stream Key in your preferred streaming tool (e.g. OBS, vMix, StreamYard)
@@ -295,3 +274,23 @@ The WebClip interaction is an integrated iframe within the interactive layer of 
 <img src="guides_images/qsg_10.png" width="500"/>
 
 15. Press STOP BROADCAST on the top right corner when you want to end the interactive broadcast (only the interactive overlay will be disabled, the ingested video will still be shown in the player).
+
+# Wix site in combination with Livery
+The Livery video player can be added to a [Wix](https://www.wix.com/) powered website. The following guide explains in 4 steps how to add the player. 
+
+Step 1: When editing a webpage, choose Add → Embed Code → Popular Embeds → Custom Element 
+
+<img src="guides_images/wix1.png" width="500"/>
+
+Step 2: Click on "choose source" and add the server URL "https://cdn.jsdelivr.net/npm/@liveryvideo/player@X.Y.Z" as well as the tag name "livery-player". The latest player version is: 
+[![NPM package](https://img.shields.io/npm/v/@liveryvideo/player)](https://www.npmjs.com/package/@liveryvideo/player)
+
+<img src="guides_images/wix2.png" width="500"/>
+
+Step 3:Close the window and “add attributes”. Here you have to enter the “streamid” that you can find in the video portal or after request.
+
+<img src="guides_images/wix3.png" width="500"/>
+
+Step 4: Close the window and you can add additional attributes, such as the dimensions of the player, as well. More information can be found at official Wix guidelines: https://support.wix.com/en/article/wix-editor-adding-a-custom-element-to-your-site
+
+<img src="guides_images/wix4.png" width="500"/>
