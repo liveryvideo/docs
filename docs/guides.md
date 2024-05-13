@@ -237,7 +237,7 @@ Close the window and you can add additional attributes, such as the dimensions o
 <img src="guides_images/qsg_1.png" width="500"/>
 
 3. Configure the broadcast details and choose the features you would like to activate (can be changed later)	
-4. Click on ADD at the top right corner to proceed
+4. Click on ADD at the top right corner to proceed.
 
 <img src="guides_images/qsg_2.png" width="500"/>
 
@@ -278,7 +278,7 @@ Close the window and you can add additional attributes, such as the dimensions o
 
 15. Press STOP BROADCAST on the top right corner when you want to end the interactive broadcast (only the interactive overlay will be disabled, the ingested video will still be shown in the player).
 
-# WebClip example list
+# WebClip Examples
 
 The WebClip interaction is an integrated iframe within the interactive layer of our live-streaming solution, facilitating the seamless embedding of external web content directly into live streams. This feature enhances engagement by dynamically incorporating diverse content types, such as articles, videos, and collaborative documents, in real-time. Explore WebClip to elevate interactivity and audience engagement in your live-streaming sessions. For detailed instructions on how to utilize popular websites with the WebClip, refer to the table below.
 
