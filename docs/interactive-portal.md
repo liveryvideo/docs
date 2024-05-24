@@ -16,8 +16,7 @@ The interactions can have the following phases, all managed by the operators in 
 - Open: the interaction has been played and showed to the audience, the end-users can interact
 - Pending: the interaction is stopped, end-users can no longer interact with it but the results are not yet published
 - Result: the results are published for the end-users
-- Closed: the interaction is closed, the end-users can no longer see them in the interaction list 
-
+- Closed: the interaction is closed, the end-users can no longer see them in the interaction list
 
 #### Poll and Vote
 
@@ -199,7 +198,6 @@ Key features:
 
 - Actual user is always in the top
 - Top positions are highlighted
-
 
 #### Product item
 

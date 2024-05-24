@@ -195,7 +195,7 @@ Finalize your email and send out the campaign. Each contact will now receive an 
 2. Check our [recommended settings](https://docs.liveryvideo.com/video_ingest?id=mixer-soft-and-hardware) at docs.liveryvideo.com for recommended configurations
 3. Click the “Start streaming” button in the streaming tool that you are using
 4. Our cloud encoder automatically starts
-5. After ~60 seconds start-up time, the video will be visible in the player. (The player URL is provided to you or can be specified by the stream ID https://embed.liveryvideo.com/?id=...)
+5. After ~60 seconds start-up time, the video will be visible in the player. (The player URL is provided to you or can be specified by the stream ID <https://embed.liveryvideo.com/?id>=...)
 
 # WebClip example list
 
@@ -233,7 +233,7 @@ The WebClip interaction is an integrated iframe within the interactive layer of 
 
 <img src="guides_images/qsg_1.png" width="500"/>
 
-3. Configure the broadcast details and choose the features you would like to activate (can be changed later)	
+3. Configure the broadcast details and choose the features you would like to activate (can be changed later)
 4. Click on ADD at the top right corner to proceed.
 
 <img src="guides_images/qsg_2.png" width="500"/>
@@ -262,8 +262,9 @@ The WebClip interaction is an integrated iframe within the interactive layer of 
 <img src="guides_images/qsg_7.png" width="500"/>
 
 13. You can find all OPEN interactions on the right side under ACTIVE INTERACTIONS
-* you can manually STOP an interaction at any time or wait until the timer is up (if configured)
-* click on the arrow to see real-time results
+
+- you can manually STOP an interaction at any time or wait until the timer is up (if configured)
+- click on the arrow to see real-time results
 
 <img src="guides_images/qsg_8.png" width="500"/>
 
@@ -276,13 +277,14 @@ The WebClip interaction is an integrated iframe within the interactive layer of 
 15. Press STOP BROADCAST on the top right corner when you want to end the interactive broadcast (only the interactive overlay will be disabled, the ingested video will still be shown in the player).
 
 # Wix site in combination with Livery
-The Livery video player can be added to a [Wix](https://www.wix.com/) powered website. The following guide explains in 4 steps how to add the player. 
 
-Step 1: When editing a webpage, choose Add → Embed Code → Popular Embeds → Custom Element 
+The Livery video player can be added to a [Wix](https://www.wix.com/) powered website. The following guide explains in 4 steps how to add the player.
+
+Step 1: When editing a webpage, choose Add → Embed Code → Popular Embeds → Custom Element
 
 <img src="guides_images/wix1.png" width="500"/>
 
-Step 2: Click on "choose source" and add the server URL "https://cdn.jsdelivr.net/npm/@liveryvideo/player@X.Y.Z" as well as the tag name "livery-player". The latest player version is: 
+Step 2: Click on "choose source" and add the server URL "https://cdn.jsdelivr.net/npm/@liveryvideo/player@X.Y.Z" as well as the tag name "livery-player". The latest player version is:
 [![NPM package](https://img.shields.io/npm/v/@liveryvideo/player)](https://www.npmjs.com/package/@liveryvideo/player)
 
 <img src="guides_images/wix2.png" width="500"/>
@@ -291,6 +293,6 @@ Step 3:Close the window and “add attributes”. Here you have to enter the “
 
 <img src="guides_images/wix3.png" width="500"/>
 
-Step 4: Close the window and you can add additional attributes, such as the dimensions of the player, as well. More information can be found at official Wix guidelines: https://support.wix.com/en/article/wix-editor-adding-a-custom-element-to-your-site
+Step 4: Close the window and you can add additional attributes, such as the dimensions of the player, as well. More information can be found at official Wix guidelines: <https://support.wix.com/en/article/wix-editor-adding-a-custom-element-to-your-site>
 
 <img src="guides_images/wix4.png" width="500"/>
