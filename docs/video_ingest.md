@@ -285,34 +285,6 @@ Assign the on-prem encoder as an external monitor of the computer. Set OBS to St
 <img width="512" src="encoder/streamyard-display-settings.png">
 </p>
 <!-- tabs:end -->
-### Re-stream.IO
-
-?> <https://try.restream.io/>
-
-?> SRT is not supported
-
-?> On-Prem is not supported
-
-<!-- tabs:start -->
-
-#### **RTMP**
-
-| Menu Item | Property          | Value                                                                         |
-| --------- | ----------------- | ----------------------------------------------------------------------------- |
-| Channel   | Service           | Custom                                                                        |
-|           | RTMP URL          | rtmp://ingest.livery.live/live/app                                            |
-|           | Stream Key        | Add the Stream Key as it is listed under Stream Details in the Livery Portal  |
-| Settings  | Broadcast Quality | Recommended resolution 1080p                                                  |
-
-#### **Screenshots**
-
-<p align="center">
-<img width="512" src="encoder/restream-stream-settings.png">
-</p>
-<p align="center">
-<img width="512" src="encoder/restream-video-settings.png">
-</p>
-<!-- tabs:end -->
 
 ### Streamaxia (iOS and Android SDK)
 
