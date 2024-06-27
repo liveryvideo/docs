@@ -83,13 +83,17 @@ The Livery players connect to the following domains. The domains need to be whit
 
 - livery-apj.akamaized.net
 
+##### EMEA other and United Arab Emirates
+
+- livery-other-emea.akamaized.net
+
 #### RTMP/SRT
 
 - ingest.livery.live
 
 #### Portal
 
-- video-encoder-director.playtotv.com
+- director.video.livery.live
 - maps.googleapis.com
 - maps.gstatic.com
 - fonts.gstatic.com
