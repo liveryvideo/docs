@@ -273,7 +273,7 @@ Key features:
 <p align="center">
 <img src="portal/currency-handling.png" width="400"/>
 </p>
-The Broadcast’s locale can be selected on the Broadcast;s form. This will define how currencies, amounts, date/time format and language will be shown on the front-end.
+The Broadcast’s locale can be selected on the Broadcast's form. This will define how currencies, amounts, date/time format and language will be shown on the front-end.
 
 Key features:
 
