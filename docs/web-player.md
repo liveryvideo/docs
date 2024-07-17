@@ -18,7 +18,7 @@ If you're not bundling your own JS you can just use an HTML snippet like this:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@liveryvideo/player@x.y.z"></script>
-<livery-player streamid="5ddb98f5e4b0937e6a4507f2"></livery-player>
+<livery-player streamid="6613d164e4b0bf3ad645f3c6"></livery-player>
 ```
 
 ?> Replace the player version and stream id by your own, see: [CDN](#cdn), [HTML](#html) and [CSS](#css) for details below.
@@ -64,10 +64,10 @@ import '@liveryvideo/player';
 ### HTML
 
 ```html
-<livery-player streamid="5ddb98f5e4b0937e6a4507f2"></livery-player>
+<livery-player streamid="6613d164e4b0bf3ad645f3c6"></livery-player>
 ```
 
-?> Replace the Livery Demo stream id (`5ddb98f5e4b0937e6a4507f2`) above by your own.
+?> Replace the Livery Demo stream id (`6613d164e4b0bf3ad645f3c6`) above by your own.
 
 Please see the [LiveryPlayer](/npm/player/dist/classes/LiveryPlayer) API documentation for additional attributes etc.
 
@@ -174,7 +174,7 @@ function MyComponent() {
     },
     [], // tell react to only use this effect on mount
   );
-  return <livery-player streamid="5ddb98f5e4b0937e6a4507f2"></livery-player>;
+  return <livery-player streamid="6613d164e4b0bf3ad645f3c6"></livery-player>;
 }
 ```
 

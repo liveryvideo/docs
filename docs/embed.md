@@ -8,7 +8,7 @@ You can embed Livery in your website using an iframe like so:
 <iframe
   width="560"
   height="315"
-  src="https://embed.livery.live?id=5ddb98f5e4b0937e6a4507f2"
+  src="https://embed.livery.live?id=6613d164e4b0bf3ad645f3c6"
   frameborder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen
@@ -20,11 +20,11 @@ You should be able to embed the [Livery Video Web Player](web-player.md) in your
 
 In addition to the `id` query parameter you can also specify a `v` query parameter to specify the version of `@liveryvideo/player` to load (defaults to `latest`).
 
-E.g: `https://embed.livery.live?id=5ddb98f5e4b0937e6a4507f2&v=beta`.
+E.g: `https://embed.livery.live?id=6613d164e4b0bf3ad645f3c6&v=beta`.
 
 ## Example
 
-[embed](https://embed.livery.live?id=5ddb98f5e4b0937e6a4507f2 ':include :type=iframe width=100% height=315 frameborder=0 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen')
+[embed](https://embed.livery.live?id=6613d164e4b0bf3ad645f3c6 ':include :type=iframe width=100% height=315 frameborder=0 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen')
 
 ## Interactive
 
