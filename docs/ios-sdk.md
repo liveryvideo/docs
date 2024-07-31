@@ -55,7 +55,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/exmg/livery-sdk-ios-podspec.git'
 
 target 'MyProject' do
-  pod "Livery", "3.0.0"
+  pod "Livery", "3.1.0"
 end
 ```
 
@@ -89,7 +89,7 @@ Swift Package Manager is distributed with Xcode. To add the Livery SDK to your i
 
 1. Open your project in Xcode and select File > Add Packages
 2. Enter the URL for the Swift Package Manager Livery SDK repo (<https://github.com/liveryvideo/livery-sdk-ios-spm>) into the search bar and click "Add Package"
-3. Then on the Dependency Rule menu select the "Exact Version" - 3.0.0 or "Branch" - main to have the latest release
+3. Then on the Dependency Rule menu select the "Exact Version" - 3.1.0 or "Branch" - main to have the latest release
 
 ## Usage
 
