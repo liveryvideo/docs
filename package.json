@@ -12,11 +12,11 @@
     "start": "live-server docs --entry-file=index.html"
   },
   "devDependencies": {
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
-    "live-server": "^1.1.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
+    "live-server": "^1.2.0",
     "markdownlint-cli": "^0.39.0",
-    "prettier": "^3.2.5"
+    "prettier": "^3.3.3"
   },
   "lint-staged": {
     "*.md": [
