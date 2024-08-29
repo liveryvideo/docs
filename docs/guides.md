@@ -1,4 +1,9 @@
-# Enabling the Shopify Plugin in the Livery Video Portal
+# Welcome to the Livery Video Guides
+
+Our comprehensive guides are designed to help you get the most out of the Livery platform. Whether you're just getting started or looking to optimize your streaming experience, you'll find step-by-step instructions, best practices, and tips to enhance your use of Livery’s powerful features.
+Explore our guides to learn how to set up and manage your account, integrate with third-party tools like Shopify, customize your streaming experience, and more. Each guide is crafted to ensure you have all the information you need to successfully leverage Livery's capabilities for your interactive live streaming needs.
+
+## Connecting Shopify and Livery
 
 The Livery platform allows customers to connect their Shopify store account directly. This integration enables the Shopify Product Interaction feature, allowing customers to search for and pull product data from their Shopify online store. This eliminates the need to manually enter product details.
 
@@ -6,40 +11,36 @@ With the Shopify Product Interaction, the link directs viewers to a specific pro
 
 To connect your Shopify account, follow these steps:
 
-### 1) Enable the Shopify Plugin:
+*** Enable the Shopify Plugin: ***
 - Log into Livery’s online management portal.
 - Go to the Plugins section in the main menu and find the Shopify plugin.
-- Enable the plugin by entering your Shopify Domain and Shopify API Access Token.
-  
-  <img src="guides_images/shopify_1.png" width="500"/>
-  <img src="guides_images/shopify_2.png" width="500"/>
+   <img src="guides_images/shopify_1.png" width="250"/>
+- Enabling the plugin requires a Shopify Domain and Shopify API Access Token.
 
-### 2) Find Your Shopify Domain:
+  <img src="guides_images/shopify_2.png" width="250"/>
+
+** 1) Find Your Shopify Domain: **
 - Log into your Shopify portal.
 - Navigate to the Settings menu and select Domains.
+   <img src="guides_images/shopify_3.png" width="150"/>
 - Copy the domain of your Shopify store and paste it into the appropriate field in the Livery portal.
-  
-  <img src="guides_images/shopify_3.png" width="250"/>
 
-### 3) Create a Storefront Access Token:
+** 2) Create a Storefront Access Token: **
 - Go to the Settings menu in your Shopify portal and select Apps and Sales Channels.
 - Click Create App, enter an App Name (this can be anything), and choose an App Developer from the dropdown menu.
 - After creating the app, configure it with the necessary permissions in the Configuration tab. Livery requires two permissions:
   - Product Listings - "read_product_listings"
   - Products - "read_products"
-    
     <img src="guides_images/shopify_4.png" width="500"/>
 
-### 4) Obtain the Access Token:
 - After setting the permissions, go to the API Credentials tab.
 - Install the newly created app by clicking Install App.
+   <img src="guides_images/shopify_5.png" width="500"/>
 - Once the app is installed, you can reveal and copy the access token. The token starts with "shpat_" followed by an ID. Note that you can only reveal this token once.
+ <img src="guides_images/shopify_6.png" width="500"/>
 - Copy the token and paste it into the Shopify Token field in the Livery plugin section.
-  
-    <img src="guides_images/shopify_5.png" width="500"/>
-    <img src="guides_images/shopify_6.png" width="500"/>
-
-And you’re done! A new Interaction type is now available for selection and use.
+   
+With both the domain and the token is it possible to enable the plugin. A new Interaction type is now available for selection and use.
 
 # Add streaming support (SRT)
 
