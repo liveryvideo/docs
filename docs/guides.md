@@ -23,8 +23,8 @@ To connect your Shopify account, follow these steps:
 - Go to the Settings menu in your Shopify portal and select Apps and Sales Channels.
 - Click Create App, enter an App Name (this can be anything), and choose an App Developer from the dropdown menu.
 - After creating the app, configure it with the necessary permissions in the Configuration tab. Livery requires two permissions:
--- Product Listings - "read_product_listings"
--- Products - "read_products"
+  - Product Listings - "read_product_listings"
+  - Products - "read_products"
     <img src="guides_images/shopify_4.png" width="500"/>
 
 ### 4) Obtain the Access Token:
