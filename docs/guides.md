@@ -46,11 +46,11 @@ To connect your Shopify account, follow these steps:
    
 With both the domain and the token is it possible to enable the plugin. A new Interaction type is now available for selection and use.
 
-# Add streaming support (SRT)
+## Add streaming support (SRT)
 
 Third-party tools are required to ingest a live stream via SRT or RTMP into the Livery platform. While Livery does not provide a mobile streaming library to enable live transmission from mobile devices via RTMP or SRT, there are multiple alternatives available. The following guide explains how to add a transmission library to your application, enabling your customers to stream directly from their native application.
 
-## Streaming support for iOS
+### Streaming support for iOS
 
 To add a SRT ingest to your app you can use [SRTHaishinKit](https://github.com/shogo4405/SRTHaishinKit.swift#-installation) library, to do so:
 
@@ -124,7 +124,7 @@ srtConnection.close()
 
 For more details please check the [SRTHaishinKit](https://github.com/shogo4405/SRTHaishinKit.swift#-installation) installation and usage guide.
 
-## Streaming support for Android
+### Streaming support for Android
 
 To add a SRT ingest to your app you can use [StreamPack](https://github.com/ThibaultBee/StreamPack) library.
 
@@ -197,7 +197,7 @@ streamer.release()
 
 For more details check [StreamPack](https://github.com/ThibaultBee/StreamPack) quick start guide.
 
-# Use the Frictionless login in combination with MailChimp
+## Use the Frictionless login in combination with MailChimp
 
 Livery's [Unverified Frictionless Auth](https://docs.liveryvideo.com/frictionless-login) (based on OpenId), in combination with its Query Parameter support, is a perfect tool for a smooth transition from personal marketing messages, such as emails, to active participation in an Interactive Live Broadcast. The user is automatically logged in once they navigate to the Livery interactive client via the URL, and with the use of Livery's Custom Dimensions, additional data can be passed along and stored on the user's profile. The following 5 steps explain how to set this up in combination with [MailChimp](https://mailchimp.com/).
 
@@ -237,7 +237,7 @@ Both option 2 and 3 have an invisible link, so when your contacts receive the em
 
 Finalize your email and send out the campaign. Each contact will now receive an email with a unique and personalized URL. Clicking on this link will load the stream and automatically register the user, with a profile containing all the information included in the URL.
 
-# How to live stream with Livery
+## How to live stream with Livery
 
 1. For ingesting video into Livery, enter the Ingest URL and Stream Key in your preferred streaming tool (e.g. OBS, vMix, StreamYard)
 2. Check our [recommended settings](https://docs.liveryvideo.com/video_ingest?id=mixer-soft-and-hardware) at docs.liveryvideo.com for recommended configurations
@@ -245,7 +245,7 @@ Finalize your email and send out the campaign. Each contact will now receive an 
 4. Our cloud encoder automatically starts
 5. After ~60 seconds start-up time, the video will be visible in the player. (The player URL is provided to you or can be specified by the stream ID <https://embed.liveryvideo.com/?id>=...)
 
-# WebClip example list
+## WebClip example list
 
 The WebClip interaction is an integrated iframe within the interactive layer of our live-streaming solution, facilitating the seamless embedding of external web content directly into live streams. This feature enhances engagement by dynamically incorporating diverse content types, such as articles, videos, and collaborative documents, in real-time. Explore WebClip to elevate interactivity and audience engagement in your live-streaming sessions. For detailed instructions on how to utilize popular websites with the WebClip, refer to the table below.
 
