@@ -14,16 +14,17 @@ To connect your Shopify account, follow these steps:
 ***Enable the Shopify Plugin:***
 - Log into Livery’s online management portal.
 - Go to the Plugins section in the main menu and find the Shopify plugin.
-   <img src="guides_images/shopify_1.png" width="250"/>
+  
+<img src="guides_images/shopify_1.png" width="250"/>
 - Enabling the plugin requires a Shopify Domain and Shopify API Access Token.
 
-  <img src="guides_images/shopify_2.png" width="250"/>
+<img src="guides_images/shopify_2.png" width="250"/>
 
 **1) Find Your Shopify Domain:**
 - Log into your Shopify portal.
 - Navigate to the Settings menu and select Domains.
   
-   <img src="guides_images/shopify_3.png" width="150"/>
+<img src="guides_images/shopify_3.png" width="150"/>
 - Copy the domain of your Shopify store and paste it into the appropriate field in the Livery portal.
 
 **2) Create a Storefront Access Token:**
@@ -33,15 +34,14 @@ To connect your Shopify account, follow these steps:
   - Product Listings - "read_product_listings"
   - Products - "read_products"
     
-    <img src="guides_images/shopify_4.png" width="250"/>
-
+<img src="guides_images/shopify_4.png" width="250"/>
 - After setting the permissions, go to the API Credentials tab.
 - Install the newly created app by clicking Install App.
   
-   <img src="guides_images/shopify_5.png" width="250"/>
+<img src="guides_images/shopify_5.png" width="250"/>
 - Once the app is installed, you can reveal and copy the access token. The token starts with "shpat_" followed by an ID. Note that you can only reveal this token once.
   
- <img src="guides_images/shopify_6.png" width="250"/>
+<img src="guides_images/shopify_6.png" width="250"/>
 - Copy the token and paste it into the Shopify Token field in the Livery plugin section.
    
 With both the domain and the token is it possible to enable the plugin. A new Interaction type is now available for selection and use.
