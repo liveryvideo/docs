@@ -1,3 +1,42 @@
+# Enabling the Shopify Plugin in the Livery Video Portal
+
+The Livery platform allows customers to connect their Shopify store account directly. This integration enables the Shopify Product Interaction feature, allowing customers to search for and pull product data from their Shopify online store. This eliminates the need to manually enter product details.
+
+With the Shopify Product Interaction, the link directs viewers to a specific product in your store while the live stream continues in Picture-in-Picture mode, ensuring they don’t miss anything. All information collected via Livery’s SSO is automatically added to the Shopify purchase form, minimizing the effort needed for transactions.
+
+To connect your Shopify account, follow these steps:
+
+### 1) Enable the Shopify Plugin:
+- Log into Livery’s online management portal.
+- Go to the Plugins section in the main menu and find the Shopify plugin.
+- Enable the plugin by entering your Shopify Domain and Shopify API Access Token.
+  <img src="guides_images/shopify_1.png" width="500"/>
+  <img src="guides_images/shopify_2.png" width="500"/>
+
+### 2) Find Your Shopify Domain:
+- Log into your Shopify portal.
+- Navigate to the Settings menu and select Domains.
+- Copy the domain of your Shopify store and paste it into the appropriate field in the Livery portal.
+  <img src="guides_images/shopify_3.png" width="500"/>
+
+### 3) Create a Storefront Access Token:
+- Go to the Settings menu in your Shopify portal and select Apps and Sales Channels.
+- Click Create App, enter an App Name (this can be anything), and choose an App Developer from the dropdown menu.
+- After creating the app, configure it with the necessary permissions in the Configuration tab. Livery requires two permissions:
+-- Product Listings - "read_product_listings"
+-- Products - "read_products"
+    <img src="guides_images/shopify_4.png" width="500"/>
+
+### 4) Obtain the Access Token:
+- After setting the permissions, go to the API Credentials tab.
+- Install the newly created app by clicking Install App.
+- Once the app is installed, you can reveal and copy the access token. The token starts with "shpat_" followed by an ID. Note that you can only reveal this token once.
+- Copy the token and paste it into the Shopify Token field in the Livery plugin section.
+    <img src="guides_images/shopify_5.png" width="500"/>
+    <img src="guides_images/shopify_6.png" width="500"/>
+
+And you’re done! A new Interaction type is now available for selection and use.
+
 # Add streaming support (SRT)
 
 Third-party tools are required to ingest a live stream via SRT or RTMP into the Livery platform. While Livery does not provide a mobile streaming library to enable live transmission from mobile devices via RTMP or SRT, there are multiple alternatives available. The following guide explains how to add a transmission library to your application, enabling your customers to stream directly from their native application.
