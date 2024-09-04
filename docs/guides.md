@@ -29,12 +29,18 @@ To connect your Shopify account, follow these steps:
 
 **2) Create a Storefront Access Token:**
 - Go to the Settings menu in your Shopify portal and select Apps and Sales Channels.
+- Click Develop apps.
 - Click Create App, enter an App Name (this can be anything), and choose an App Developer from the dropdown menu.
-- After creating the app, configure it with the necessary permissions in the Configuration tab. Livery requires two permissions:
+- Configure the 'Admin API integration' permissions in the Configuration tab. Livery requires two permissions:
   - Product Listings - "read_product_listings"
   - Products - "read_products"
     
 <img src="guides_images/shopify_4.png" width="250"/>
+- Configure the 'Storefront API integration' permissions in the Configuration tab. Livery requires one permission:
+  - Products - "unauthenticated_read_product_listings"
+    
+<img src="guides_images/shopify_7.png" width="250"/>
+
 - After setting the permissions, go to the API Credentials tab.
 - Install the newly created app by clicking Install App.
   
@@ -43,7 +49,7 @@ To connect your Shopify account, follow these steps:
   
 <img src="guides_images/shopify_6.png" width="250"/>
 - Copy the token and paste it into the Shopify Token field in the Livery plugin section.
-   
+
 With both the domain and the token is it possible to enable the plugin. A new Interaction type is now available for selection and use.
 
 ## Add streaming support (SRT)
