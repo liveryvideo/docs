@@ -18,7 +18,11 @@ Unless an API key is added, the customer will not be able to retrieve broadcast 
 On broadcast status change, it is possible to be notified of the changes. You have to add a value to `PUSH_URL`
 server setting, representing your API endpoint which will receive the data with HTTP POST.
 
-Note: Add your API endpoint URL to receive broadcast status changes. This is done via server settings update endpoint
+Note: Add your API endpoint URL to receive broadcast status changes. This is done via server settings update endpoint.
+
+Example of notification: 
+
+[broadcast](_customer-interactive-api/_example-Broadcast.md ':include')
 
 ## API Calls
 
@@ -37,7 +41,7 @@ Response example:
 
 [filename](_customer-interactive-api/_example-BroadcastCurrent.md ':include')
 
-List of supported interactions:
+#### List of supported interactions:
 
 <details>
 <summary>announcement</summary>
@@ -146,6 +150,8 @@ Response example:
 
 [estimationPoll](_customer-interactive-api/interactions/estimationPoll.md ':include')
 
+This response is specific to the `estimationPoll` interaction type. [Here](#List-of-supported-interactions) is the full list of supported interactions.
+
 ### Get user data
 
 This API call can be used to retrieve a list of users in a broadcast. Page numbers starts from 1.
@@ -160,7 +166,7 @@ Response example:
 
 ### Get leaderboard data
 
-This API call can be used to retrieve game data on a broadcast. Page numbers starts from 0.
+This API call can be used to retrieve game data on a broadcast.
 
 ```
 curl -H "x-livery-api-key: value" https://www.example.com/services/broadcasts/{broadcastId}/leaderboard/pagenumbers/{pageNumber}
