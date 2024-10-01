@@ -18,13 +18,17 @@ Unless an API key is added, the customer will not be able to retrieve broadcast 
 On broadcast status change, it is possible to be notified of the changes. You have to add a value to `PUSH_URL`
 server setting, representing your API endpoint which will receive the data with HTTP POST.
 
-Note: Add your API endpoint URL to receive broadcast status changes. This is done via server settings update endpoint
+Note: Add your API endpoint URL to receive broadcast status changes. This is done via server settings update endpoint.
+
+Example of notification: 
+
+[broadcast](_customer-interactive-api/_example-Broadcast.md ':include')
 
 ## API Calls
 
 Page numbers start at 0 on paginated API calls
 
-### Get current broadcast data (pull)
+### Get current broadcast data
 
 This API call can be used to retrieve information about the broadcast that is currently live.
 A use case is to poll this API to react on the broadcast being closed.
@@ -35,9 +39,95 @@ curl -H "x-livery-api-key: value" https://www.example.com/services/broadcasts/cu
 
 Response example:
 
-[filename](_customer-interactive-api/_example-VideoExtensionBroadcastCurrent.md ':include')
+[filename](_customer-interactive-api/_example-BroadcastCurrent.md ':include')
 
-### Get broadcast data (pull)
+#### List of supported interactions:
+
+<details>
+<summary>announcement</summary>
+
+[announcement](_customer-interactive-api/interactions/announcement.md ':include')
+</details>
+
+<details>
+<summary>countdown</summary>
+
+[countdown](_customer-interactive-api/interactions/countdown.md ':include')
+</details>
+
+<details>
+<summary>estimate</summary>
+
+[estimate](_customer-interactive-api/interactions/estimate.md ':include')
+</details>
+
+<details>
+<summary>estimationPoll</summary>
+
+[estimationPoll](_customer-interactive-api/interactions/estimationPoll.md ':include')
+</details>
+
+<details>
+<summary>estimationPrediction</summary>
+
+[estimationPrediction](_customer-interactive-api/interactions/estimationPrediction.md ':include')
+</details>
+
+<details>
+<summary>liveReaction</summary>
+
+[liveReaction](_customer-interactive-api/interactions/liveReaction.md ':include')
+</details>
+
+<details>
+<summary>poll</summary>
+
+[poll](_customer-interactive-api/interactions/poll.md ':include')
+</details>
+
+<details>
+<summary>prediction</summary>
+
+[prediction](_customer-interactive-api/interactions/prediction.md ':include')
+</details>
+
+<details>
+<summary>productItem</summary>
+
+[productItem](_customer-interactive-api/interactions/productItem.md ':include')
+</details>
+
+<details>
+<summary>rating</summary>
+
+[rating](_customer-interactive-api/interactions/rating.md ':include')
+</details>
+
+<details>
+<summary>shopifyProductItem</summary>
+
+[shopifyProductItem](_customer-interactive-api/interactions/shopifyProductItem.md ':include')
+</details>
+
+<details>
+<summary>socialShare</summary>
+
+[socialShare](_customer-interactive-api/interactions/socialShare.md ':include')
+</details>
+
+<details>
+<summary>trivia</summary>
+
+[trivia](_customer-interactive-api/interactions/trivia.md ':include')
+</details>
+
+<details>
+<summary>webclip</summary>
+
+[webclip](_customer-interactive-api/interactions/webclip.md ':include')
+</details>
+
+### Get broadcast data
 
 This API call can be used to retrieve information about any created broadcast.
 
@@ -47,22 +137,27 @@ curl -H "x-livery-api-key: value" https://www.example.com/services/broadcasts/{b
 
 Response example:
 
-[filename](_customer-interactive-api/_example-VideoExtensionBroadcast.md ':include')
+[filename](_customer-interactive-api/_example-Broadcast.md ':include')
 
-### Get broadcast data (push)
+### Get interaction
 
-This http request will push data to your API endpoint when a broadcast is updated.
+This API call can be used to retrieve information about interaction.
 
-Request body:
+```
+curl -H "x-livery-api-key: value" https://www.example.com/services/interactions/{interactionId}
+```
+Response example:
 
-[filename](_customer-interactive-api/_example-VideoExtensionBroadcast.md ':include')
+[estimationPoll](_customer-interactive-api/interactions/estimationPoll.md ':include')
+
+This response is specific to the `estimationPoll` interaction type. [Here](#List-of-supported-interactions) is the full list of supported interactions.
 
 ### Get user data
 
-This API call can be used to retrieve a list of users in a broadcast.
+This API call can be used to retrieve a list of users in a broadcast. Page numbers starts from 1.
 
 ```
-curl -H "x-livery-api-key: value" https://www.example.com/services/broadcasts/{broadcastId}/users
+curl -H "x-livery-api-key: value" https://www.example.com/services/broadcasts/{broadcastId}/users/pagenumbers/{pagenumber}
 ```
 
 Response example:
