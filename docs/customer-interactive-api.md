@@ -154,7 +154,7 @@ This response is specific to the `estimationPoll` interaction type. [Here](#List
 
 ### Get user data
 
-This API call can be used to retrieve a list of users in a broadcast. Page numbers starts from 1.
+This API call can be used to retrieve a list of users in a broadcast.
 
 ```
 curl -H "x-livery-api-key: value" https://www.example.com/services/broadcasts/{broadcastId}/users/pagenumbers/{pagenumber}
