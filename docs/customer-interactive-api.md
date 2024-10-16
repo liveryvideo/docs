@@ -64,19 +64,19 @@ Response example:
 <details>
 <summary>estimationPoll</summary>
 
-[estimationPoll](_customer-interactive-api/interactions/estimationPoll.md ':include')
+[estimationPoll](_customer-interactive-api/interactions/estimationpoll.md ':include')
 </details>
 
 <details>
 <summary>estimationPrediction</summary>
 
-[estimationPrediction](_customer-interactive-api/interactions/estimationPrediction.md ':include')
+[estimationPrediction](_customer-interactive-api/interactions/estimationprediction.md ':include')
 </details>
 
 <details>
 <summary>liveReaction</summary>
 
-[liveReaction](_customer-interactive-api/interactions/liveReaction.md ':include')
+[liveReaction](_customer-interactive-api/interactions/livereaction.md ':include')
 </details>
 
 <details>
@@ -94,7 +94,7 @@ Response example:
 <details>
 <summary>productItem</summary>
 
-[productItem](_customer-interactive-api/interactions/productItem.md ':include')
+[productItem](_customer-interactive-api/interactions/productitem.md ':include')
 </details>
 
 <details>
@@ -106,13 +106,7 @@ Response example:
 <details>
 <summary>shopifyProductItem</summary>
 
-[shopifyProductItem](_customer-interactive-api/interactions/shopifyProductItem.md ':include')
-</details>
-
-<details>
-<summary>socialShare</summary>
-
-[socialShare](_customer-interactive-api/interactions/socialShare.md ':include')
+[shopifyProductItem](_customer-interactive-api/interactions/shopifyproductitem.md ':include')
 </details>
 
 <details>
@@ -148,13 +142,13 @@ curl -H "x-livery-api-key: value" https://www.example.com/services/interactions/
 ```
 Response example:
 
-[estimationPoll](_customer-interactive-api/interactions/estimationPoll.md ':include')
+[estimationPoll](_customer-interactive-api/interactions/estimationpoll.md ':include')
 
 This response is specific to the `estimationPoll` interaction type. [Here](#List-of-supported-interactions) is the full list of supported interactions.
 
 ### Get user data
 
-This API call can be used to retrieve a list of users in a broadcast. Page numbers starts from 1.
+This API call can be used to retrieve a list of users in a broadcast.
 
 ```
 curl -H "x-livery-api-key: value" https://www.example.com/services/broadcasts/{broadcastId}/users/pagenumbers/{pagenumber}
