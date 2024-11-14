@@ -8,7 +8,7 @@ The Livery player is the best way to bring low-latency interactive video project
 
 The following documentation helps you to get up-and-running with different components of the Livery platform.
 
-?> Please find links to documentation of our SDKs and other components in the sidebar.
+?> Please find links to documentation of our SDKs and other components in menu at the top of this page.
 
 More information can be found at: [liveryvideo.com](https://liveryvideo.com).
 
