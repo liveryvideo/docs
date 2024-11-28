@@ -370,6 +370,8 @@ The following login methods are supported:
 - Unverified frictionless login
 - Verified frictionless login via JWT token
 
+On all login fields non-latin characters are also accepted.
+
 #### Presenter view
 
 <p align="center">
