@@ -21,8 +21,9 @@ The interactions can have the following phases, all managed by the operators in 
 #### Poll and Vote
 
 <p align="center">
-<img src="portal/poll_2024.png" height="500"/>
+<img src="portal/poll_2024-2.png" width="400"/>
 </p>
+
 The poll interaction is meant to prepare poll or vote questions with one question and multiple answers. Points are not added to these questions.
 
 Key features:
@@ -32,10 +33,14 @@ Key features:
 
 ##### Answer visuals
 
+<p align="center">
+<img src="portal/poll_image_2024-2.png" width="400"/>
+</p>
+
 #### Trivia
 
 <p align="center">
-<img src="portal/trivia_2024.png" height="500"/>
+<img src="portal/trivia_2024-2.png" width="400"/>
 </p>
 The trivia interaction is meant to prepare trivia questions with one question and multiple answers where the correct answer(s) are marked. Eventual points will be calculated based on the player’s answers and optionally the time of answer, and these points will affect their position in the leaderboard.
 
@@ -49,10 +54,10 @@ Key features:
 - Optional time-based scoring
 
 #### Estimation poll
-<!--
+
 <p align="center">
-<img src="portal/estimation-poll_2024.png" width="500"/>
-</p> -->
+<img src="portal/estimation-poll_2024-2.png" width="400"/>
+</p> 
 The estimation poll interaction is meant to prepare questions with answers within an interval. Scores are not added, this interaction provides the poll/vote result on a column chart including the average of given answers.
 
 Key features:
@@ -63,7 +68,7 @@ Key features:
 #### Rating
 
 <p align="center">
-<img src="portal/rating_2024.png" height="500"/>
+<img src="portal/rating_2024-2.png" width="400"/>
 </p>
 
 When you’d like to ask the opinion of your audience about a certain topic, you can set up a rating interaction.
@@ -75,10 +80,10 @@ Key features:
 - Link to product items
 
 #### Announcement
-<!--
+
 <p align="center">
-<img src="portal/announcement.jpg" width="500"/>
-</p> -->
+<img src="portal/announcement-2024-2.png" width="400"/>
+</p>
 The announcement interaction is meant to prepare quick announcements with title and subtitle. This is shown only one time in the front-end, after the interaction disappears and can't be rewatched.
 
 Key features:
@@ -89,24 +94,28 @@ Key features:
 
 ##### Picture in picture
 
-#### Live reaction
-<!--
 <p align="center">
-<img src="portal/live-reaction.png" width="500"/>
-</p> -->
+<img src="portal/pip-2024-2.png" width="400"/>
+</p>
+When an announcement or product item has a button which opens an external link, picture in picture mode of the video can be configured.
+
+#### Live reaction
+
+<p align="center">
+<img src="portal/live-reaction-2024-2.png" width="400"/>
+</p>
 To offer the option to express feelings during the broadcast these live reaction emojis can be shown.
 
 Key features:
 
 - Up to 5 emojis in the selector
-- Predefined emoji list in the web-based management system
-- Unlimited reactions during broadcast
+- Unlimited sent reactions during broadcast
 
 #### Countdown
-<!--
+
 <p align="center">
-<img src="portal/countdown.png" width="500"/>
-</p> -->
+<img src="portal/countdown-2024-2.png" width="400"/>
+</p>
 The countdown indicates how much time is left before the broadcast event is starting. It shows days, hours, minutes and seconds.
 
 Key features:
@@ -117,10 +126,10 @@ Key features:
 - Configurable message for the last 60 seconds
 
 #### Chat
-<!--
+
 <p align="center">
-<img src="portal/chat.png" width="400"/>
-</p> -->
+<img src="portal/chat-2024-2.png" width="400"/>
+</p>
 The audience can chat with each other via the chat module.
 
 Key features:
@@ -131,7 +140,7 @@ Key features:
 #### Q&A
 
 <p align="center">
-<img src="portal/q-a_2024.png" height="500"/>
+<img src="portal/q-a_2024-2.png" width="400"/>
 </p>
 When the Q&A session is open the audience has the option to raise questions which the operator can manage in the web-based management system.
 
@@ -148,7 +157,7 @@ Key features:
 #### Social share
 
 <p align="center">
-<img src="portal/social-sharing.jpg" width="500"/>
+<img src="portal/social-sharing.jpg" width="400"/>
 </p>
 With the social share interaction you can encourage your audience to share a short message on social platforms.
 
@@ -162,7 +171,7 @@ Key features:
 #### Estimation
 
 <p align="center">
-<img src="portal/estimates_2024.png" height="500"/>
+<img src="portal/estimates_2024-2.png" width="400"/>
 </p>
 The estimation interaction is meant to prepare questions with answers within an interval. Points will be calculated based on the player’s answers and these points will affect their position in the leaderboard.
 
@@ -173,11 +182,11 @@ Key features:
 - Optional time-based scoring
 
 #### Prediction
-<!--
+
 <p align="center">
-<img src="portal/prediction.jpg" width="500"/>
-</p> -->
-The prediction interaction is meant to prepare questions with one question and multiple answers where the correct answer(s) are not known. Points will be calculated based on the player’s answers and these points will affect their position in the Leaderboard.
+<img src="portal/prediction-2024-2.png" width="400"/>
+</p>
+The prediction interaction is meant to prepare questions with one question and multiple answers where the correct answer(s) are not yet known. Points will be calculated based on the player’s answers and these points will affect their position in the Leaderboard.
 
 Key features:
 
@@ -187,11 +196,24 @@ Key features:
 - Leaderboard results
 - Optional time-based scoring
 
-#### Leaderboard
+#### Estimation prediction
 <!--
 <p align="center">
-<img src="portal/leaderboard.jpg" height="500"/>
+<img src="portal/estimates_2024-2.png" width="400"/>
 </p> -->
+The estimation prediction interaction is meant to prepare questions with answers within an interval where the correct answer is not yet known. Points will be calculated based on the player’s answers and these points will affect their position in the leaderboard.
+
+Key features:
+
+- Slider or free value input
+- Score deduction per steps
+- Optional time-based scoring
+  
+#### Leaderboard
+
+<p align="center">
+<img src="portal/leaderboard-2024-2.png" width="400"/>
+</p>
 The Leaderboard shows the earned points of the players during the broadcast.
 
 Key features:
@@ -202,7 +224,7 @@ Key features:
 #### Product item
 
 <p align="center">
-<img src="portal/product-item_2024.png" height="500"/>
+<img src="portal/product-item_2024-2.png" width="1200"/>
 </p>
 For product promotions the product item interaction can be used.
 
@@ -213,11 +235,30 @@ Key features:
 - Multiple attributes (size, color, etc.)
 - Copy change of the Buy button
 
-##### Picture in picture
+#### Shopify product item
+<!--
+<p align="center">
+<img src="portal/product-item_2024-2.png" width="1200"/>
+</p> -->
+To inlcude a product out of your shopify store the Shopify product item interaction can be used.
+
+Key features:
+
+- easy integration on plugin page
+- available product data is pulled in automatically
   
 #### Webclip
 
+<p align="center">
+<img src="portal/webclip_2024-2.png" width="400"/>
+</p>
+
+#### Captions and subtitles
+
 #### Social share (coming soon)
+<p align="center">
+<img src="portal/social_share_2024-2.png" width="400"/>
+</p>
 
 ### Management features
 
@@ -281,11 +322,10 @@ Key features:
 - Preview of values
 
 #### Theming
-<!--
+
 <p align="center">
-<img src="portal/trivia_2024.png" height="500"/>
-<img src="portal/themes_2024.png" height="500"/>
-</p> -->
+<img src="portal/theming-2024-2.png" width="1200"/>
+</p> 
 The look and feel of the interactive features can be defined via Themes. The web-based management system offers an easy to use way to change colours and logos easily.
 
 Key features:
@@ -321,6 +361,15 @@ You can select which pages and features you’d like to add to your broadcast ou
 - Showing percentage of provided answers
 - User counter
 
+#### Authentication 
+
+The following login methods are supported:
+- Log in as Guest
+- Email verified
+- Phone number verified
+- Unverified frictionless login
+- Verified frictionless login via JWT token
+
 #### Presenter view
 
 <p align="center">
@@ -336,6 +385,12 @@ Key features:
 - Full screen option
 - Font size setup
 - Leaderboard top 10
+
+#### Q&A overview
+
+#### Interaction forcing
+
+#### Interaction and Broadcast scheduling
 
 #### Data export
 
