@@ -333,6 +333,7 @@ Key features:
 - 10 colors generates a new look
 - Default theme setup (on customer level)
 - Theme definition on broadcast level
+  
 <!--
 #### Audience groups
 
@@ -346,7 +347,9 @@ Key features:
 - Audience group management in the web-based management system
 - Individual emails or full domains can be included
 - Exclude guest user option
+
 -->
+
 #### Show/Hide pages or features
 
 <p align="center">
@@ -414,6 +417,7 @@ The most important Video stream settings and management is available via the web
 
 To collect analytical data, Livery supports Google Analytics integration.
 -->
+
 #### Interaction API
 
 When you’d like to access the statistics of the interactive layer, you can use our Interaction API and with the available data build your overview.
