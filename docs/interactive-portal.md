@@ -333,22 +333,6 @@ Key features:
 - 10 colors generates a new look
 - Default theme setup (on customer level)
 - Theme definition on broadcast level
-  
-<!--
-#### Audience groups
-
-<p align="center">
-<img src="portal/audience-group.png" height="500"/>
-</p>
-With audience groups you can set up a broadcast which is available for only a closed group of users.
-
-Key features:
-
-- Audience group management in the web-based management system
-- Individual emails or full domains can be included
-- Exclude guest user option
-
--->
 
 #### Show/Hide pages or features
 
@@ -412,16 +396,30 @@ During the broadcast event we collect information about user’s reactions and a
 #### Livery Video Integration - Video Stream Control
 
 The most important Video stream settings and management is available via the web-based management system, so everything can be set up in one place end to end.
-<!--
-#### Google Analytics integration
 
-To collect analytical data, Livery supports Google Analytics integration.
--->
 
 #### Interaction API
 
 When you’d like to access the statistics of the interactive layer, you can use our Interaction API and with the available data build your overview.
+
 <!--
+#### Audience groups
+
+<p align="center">
+<img src="portal/audience-group.png" height="500"/>
+</p>
+With audience groups you can set up a broadcast which is available for only a closed group of users.
+
+Key features:
+
+- Audience group management in the web-based management system
+- Individual emails or full domains can be included
+- Exclude guest user option
+
+#### Google Analytics integration
+
+To collect analytical data, Livery supports Google Analytics integration.
+
 ### Revision History
 
 | Version                                        | Description                                                                                                                                                                                                                                                                                                                                                             |
