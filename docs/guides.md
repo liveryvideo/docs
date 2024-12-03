@@ -25,7 +25,7 @@ To connect your Shopify account, follow these steps:
 - Navigate to the Settings menu and select Domains.
   
 <img src="guides_images/shopify_3.png" width="150"/>
-- Copy the domain of your Shopify store and paste it into the appropriate field in the Livery portal.
+- Copy the domain of your Shopify store and paste it into the appropriate field in the Livery portal. Only the `myshopify.com` domains are supported by Shopify, so alias domains are not supported.
 
 **2) Create a Storefront Access Token:**
 - Go to the Settings menu in your Shopify portal and select Apps and Sales Channels.
