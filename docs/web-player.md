@@ -8,7 +8,7 @@
 
 Livery video player for use in web browsers.
 
-?> Demo can be found at: [demo.liveryvideo.com](https://demo.liveryvideo.com) ([source](https://github.com/liveryvideo/demo-web)).
+?> Links: [Product demo](https://liveryvideo.com/demo), [Test page](https://test.livery.live/)
 
 Please refer to the [Livery Video Portal](video-portal.md) for stream configuration options.
 
