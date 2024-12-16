@@ -138,7 +138,7 @@ Response example:
 This API call can be used to retrieve information about interaction.
 
 ```
-curl -H "x-livery-api-key: value" https://www.example.com/services/interactions/{interactionId}
+curl -H "x-livery-api-key: value" https://www.example.com/services/broadcasts/{broadcastId}/interactions/{interactionId}
 ```
 Response example:
 
