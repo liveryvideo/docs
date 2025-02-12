@@ -160,7 +160,11 @@ Response example:
 
 ### Get leaderboard data
 
-This API call can be used to retrieve game data on a broadcast.
+This API call can be used to retrieve game data on a broadcast. 
+The `isUpdating` field serves as an indicator of the leaderboard’s current processing status. 
+When `isUpdating` is set to `true`, it signifies that the leaderboard is actively undergoing updates, 
+such as recalculating player rankings or processing new scores. 
+Conversely, when `isUpdating` is `false`, it indicates that the leaderboard has completed all processing tasks and reflects the most recent data.
 
 ```
 curl -H "x-livery-api-key: value" https://www.example.com/services/broadcasts/{broadcastId}/leaderboard/pagenumbers/{pageNumber}
