@@ -5,6 +5,7 @@
   "pageNumber": 0,
   "pageMaxSize": 25,
   "totalPages": 1,
+  "isUpdating": false,
   "entries": [
     {
       "userId": "__8AHZ9JcTmiPkAxSxkAAA==",
@@ -12,6 +13,7 @@
       "anonymous": false,
       "score": 9,
       "rank": 1,
+      "sub": "olivia",
       "attributes": []
     },
     {
@@ -20,6 +22,7 @@
       "anonymous": false,
       "score": 7,
       "rank": 2,
+      "sub": "james",
       "attributes": []
     },
     {
@@ -28,6 +31,7 @@
       "anonymous": false,
       "score": 3,
       "rank": 3,
+      "sub": "amelia",
       "attributes": []
     },
     {
@@ -36,6 +40,7 @@
       "anonymous": false,
       "score": 3,
       "rank": 3,
+      "sub": "ethan",
       "attributes": []
     }
   ]
