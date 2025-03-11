@@ -55,7 +55,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/exmg/livery-sdk-ios-podspec.git'
 
 target 'MyProject' do
-  pod "Livery", "3.1.3"
+  pod "Livery", "3.1.4"
 end
 ```
 
@@ -199,9 +199,18 @@ enum LiveryErrors: LocalizedError {
 | Name                                   | Type                                           | Default                        | Description                                                                          |
 | -------------------------------------- | ---------------------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------ |
 | `sdkVersion`                           | `String`                                       |                                | A getter to retrieve the SDK version.                                                |
+| `disableSentry`                        | `Bool`                                         | `false`                        | A Bool which disabled `SentrySDK` usage.                                             |
 | `disableSentryStaticMethodsUsage`      | `Bool`                                         | `false`                        | A Bool which disabled `SentrySDK` static methos usage. A SentryHub is still created. |
 | `audioSessionSettings`                 | [`LivertAudioSessionSettings`](#audio-session) | `LivertAudioSessionSettings()` | Property to store the `AVAudioSession` settings.                                     |
 | `minimumDeviceSpace`                   | `Int`                                          | `20000000`                     | Minimum device space in bytes required for the SDK to work properly.                 |
+
+#### disableSentry
+
+By default Livery will use the `SentrySDK` to track events, handled errors and crashes.
+
+This integration can be disabled by setting this property to **true**.
+
+This property needs to be set before calling the `initialize()` method.
 
 #### disableSentryStaticMethodsUsage
 
