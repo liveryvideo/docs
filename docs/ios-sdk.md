@@ -4,7 +4,7 @@
 
 Livery Video iOS SDK, published via CocoaPods and Swift Package Manager. For CocoaPods see [livery-sdk-ios-podspec](https://github.com/exmg/livery-sdk-ios-podspec) and for Swift Package Manager see [livery-sdk-ios-spm](https://github.com/liveryvideo/livery-sdk-ios-spm).
 
-Documentation can be found at: [docs.liveryvideo.com/ios-sdk](https://docs.liveryvideo.com/ios-sdk).
+Documentation can be found at: [docs.livery.live/ios-sdk](ios-sdk.md).
 
 More information can be found at: [liveryvideo.com](https://liveryvideo.com).
 
@@ -21,7 +21,7 @@ To install Livery SDK into your project, follow these steps below.
 You should request credentials from Livery, then place them in your ~/.netrc as follows: (create if necessary)
 
 ```
-machine sdk-ios-binaries.liveryvideo.com
+machine sdk-ios-binaries.livery.live
   login YOUR_USERNAME
   password YOUR_PASSWORD
 ```

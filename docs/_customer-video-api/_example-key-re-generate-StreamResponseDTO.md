@@ -62,7 +62,7 @@
   },
   "streamUrls": [],
   "remoteConfigUrl": "https://cdn.playtotv.com/video-encoder-dev/remoteconfigs/626fa59fe4b018f4ecdc092c.json",
-  "remoteConfigUrlLiverySpecific": "https://cdn.liveryvideo.com/remoteconfigs/626fa59fe4b018f4ecdc092c",
+  "remoteConfigUrlLiverySpecific": "https://cdn.livery.live/remoteconfigs/626fa59fe4b018f4ecdc092c",
   "analytics": {
     "samplingPercentage": 100
   },

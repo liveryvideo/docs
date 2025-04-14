@@ -272,7 +272,7 @@ Assign the on-prem encoder as an external monitor of the computer. Set OBS to St
 | Menu Item   | Property          | Value                                                              |
 | ----------- | ----------------- | ------------------------------------------------------------------ |
 | Destination | Service           | Custom                                                             |
-|             | RTMP Server URL   | rtmp://ingest.liveryvideo.com/app                                  |
+|             | RTMP Server URL   | rtmp://ingest.livery.live/app                                  |
 |             | Stream Key        | The Stream Key as shown under Stream Details in the Livery Portal  |
 | Settings    | Broadcast Quality | Recommended resolution 1080p                                       |
 
@@ -333,7 +333,7 @@ Assign the on-prem encoder as an external monitor of the computer. Set OBS to St
 
 | Menu Item   | Property           | Value                                                                                                                                                                                                           |
 | ----------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Destination | URL                | Larix requires the ingest URL and stream key to be separated. The stream ID should as well as the 'pkt_size=1316&streamid=' be removed from the Ingest URL srt://ingest.liveryvideo.com:9998                    |
+| Destination | URL                | Larix requires the ingest URL and stream key to be separated. The stream ID should as well as the 'pkt_size=1316&streamid=' be removed from the Ingest URL srt://ingest.livery.live:9998                    |
 |             | Stream Key         | Add the Stream Key as it is listed under Stream Details in the Livery Portal. If the stream does not contain a Stream Key, the last part of the URL, the stream ID, can be added as Stream Key; 12a34b56c78d90e |
 |             | Resolution         | Recommended resolution 1920x1080                                                                                                                                                                                |
 |             | Keyframe frequency | 2 seconds                                                                                                                                                                                                       |

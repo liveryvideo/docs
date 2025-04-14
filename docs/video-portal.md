@@ -32,7 +32,7 @@ The Custom quality feature enables our customers to customize their own ABR conf
 ## Stream Overview
 
 All streams connected to the account are listed in the stream overview. The basic information is listed in the row of a stream. Additional information and settings can be found in the menu on the right side of the row.
-The StreamID is used to link a stream to a player implementation. More information about the players and the integration of the player SDK’s can be found on [docs.liveryvideo.com](index.md 'Main page')
+The StreamID is used to link a stream to a player implementation. More information about the players and the integration of the player SDK’s can be found on [docs.livery.live](index.md 'Main page')
 
 The ID of the linked encoders is visible in the row. The cloud encoder ID only shows while streaming. The on-prem encoders, when linked, are always visible. An on-prem encoder, when available, can be linked to a stream via the “Add Encoder to Stream” option in the stream menu.
 
@@ -130,4 +130,4 @@ _The player buttons are controlled by the Management tool in the stream settings
 **I don't see the interactive elements on top of the video stream?**
 
 _The interactive layer of the Livery video player loads the interactive URL. You can find the input field in the [Stream Settings](portals.md 'stream-settings') . It takes 10-60 seconds before the URL becomes active in the interactive layer._
-_When the Livery Interactive powers the interactie layer, an URL similar to the following: ...interactive.liveryvideo.com, is set in the Interactive URL field of the stream settings. The interaction list/schedule can be managed via the Livery Interactive portal. The interactions only show when the broadcast is set to LIVE, in the Livery Interactive portal._
+_When the Livery Interactive powers the interactie layer, an URL similar to the following: ...interactive.livery.live, is set in the Interactive URL field of the stream settings. The interaction list/schedule can be managed via the Livery Interactive portal. The interactions only show when the broadcast is set to LIVE, in the Livery Interactive portal._

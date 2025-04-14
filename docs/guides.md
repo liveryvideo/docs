@@ -205,7 +205,7 @@ For more details check [StreamPack](https://github.com/ThibaultBee/StreamPack) q
 
 ## Use the Frictionless login in combination with MailChimp
 
-Livery's [Unverified Frictionless Auth](https://docs.liveryvideo.com/frictionless-login) (based on OpenId), in combination with its Query Parameter support, is a perfect tool for a smooth transition from personal marketing messages, such as emails, to active participation in an Interactive Live Broadcast. The user is automatically logged in once they navigate to the Livery interactive client via the URL, and with the use of Livery's Custom Dimensions, additional data can be passed along and stored on the user's profile. The following 5 steps explain how to set this up in combination with [MailChimp](https://mailchimp.com/).
+Livery's [Unverified Frictionless Auth](frictionless-login.md) (based on OpenId), in combination with its Query Parameter support, is a perfect tool for a smooth transition from personal marketing messages, such as emails, to active participation in an Interactive Live Broadcast. The user is automatically logged in once they navigate to the Livery interactive client via the URL, and with the use of Livery's Custom Dimensions, additional data can be passed along and stored on the user's profile. The following 5 steps explain how to set this up in combination with [MailChimp](https://mailchimp.com/).
 
 **Step 1:**
 
@@ -222,7 +222,7 @@ Create the URL code that will be included in your email campaign.
 An example URL is:
 
 ```groovy
-https://embed.liveryvideo.com/?id=64382097e4b07f0e2af767a5&&livery_sub=*|EMAIL|*&livery_preferred_username=*|FNAME|*&livery_cd1=day1&livery_cd2=email
+https://embed.livery.live/?id=64382097e4b07f0e2af767a5&&livery_sub=*|EMAIL|*&livery_preferred_username=*|FNAME|*&livery_cd1=day1&livery_cd2=email
 ```
 
 For this example, Livery's embed page is being used, with the specific stream ID contained in the '?id=...' part of the URL. The `livery_sub` parameter is used to determine who the user is. If an unknown value is used, a new user is created. If the 'sub' value is already known, the user's profile is updated. In the example above, the email address is used from each user to make the URL unique, and the first name is used as the preferred username in Livery. Next to the parameters used for the Frictionless login, 2 Custom Dimensions (`livery_cd`) are used to store general information about the campaign.
@@ -246,10 +246,10 @@ Finalize your email and send out the campaign. Each contact will now receive an 
 ## How to live stream with Livery
 
 1. For ingesting video into Livery, enter the Ingest URL and Stream Key in your preferred streaming tool (e.g. OBS, vMix, StreamYard)
-2. Check our [recommended settings](https://docs.liveryvideo.com/video_ingest?id=mixer-soft-and-hardware) at docs.liveryvideo.com for recommended configurations
+2. Check our [recommended settings](video_ingest#mixer-soft-and-hardware) at docs.livery.live for recommended configurations
 3. Click the “Start streaming” button in the streaming tool that you are using
 4. Our cloud encoder automatically starts
-5. After ~60 seconds start-up time, the video will be visible in the player. (The player URL is provided to you or can be specified by the stream ID <https://embed.liveryvideo.com/?id>=...)
+5. After ~60 seconds start-up time, the video will be visible in the player. (The player URL is provided to you or can be specified by the stream ID <https://embed.livery.live/?id>=...)
 
 ## WebClip example list
 

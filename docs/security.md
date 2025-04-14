@@ -68,7 +68,7 @@ The Livery platform utilizes an RTMP or SRT stream for the first mile delivery t
 <p align="center">
 <img src="security/Stream-Key-1.png" width="500"/>
 </p>
-The Stream Key in combination with the Stream URL (SRT/RTMP)can be copied to the prefered streaming tool. See [mixer soft- and hardware](https://docs.liveryvideo.com/video_ingest?id=mixer-soft-and-hardware) for more infomation about the tools.
+The Stream Key in combination with the Stream URL (SRT/RTMP)can be copied to the prefered streaming tool. See [mixer soft- and hardware](video_ingest.md?id=mixer-soft-and-hardware) for more infomation about the tools.
 
 ## CDN Authentication
 
