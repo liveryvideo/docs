@@ -1,8 +1,8 @@
 # Livery Video Customer API
 
-This document describes the API calls that are available to customers. These calls can be used by application developers that are using the Livery streaming solution and want to control the stream from within their own software instead of relying on the Livery producer console.
+This page describes the API calls that are available to customers. These calls can be used by application developers that are using the Livery streaming solution and want to control the stream from within their own software instead of relying on the Livery producer console.
 
-The paths in this document should be concatenated to the domain name of a environment to make the full URL for a request.
+The paths in this page should be concatenated to the domain name of a environment to make the full URL for a request.
 The domain name for the production environment is `backend.video-encoder.playtotv.com`.
 So if the streamId is 1234 and the documentation mentions this API call:
 
@@ -30,6 +30,9 @@ There are two types of API Keys: Customer API keys and Stream API keys.
 | Stream       | authorized to do all documented stream requests that involve a single stream.                                                          |
 
 ## Rate limits
+
+These API's are not ment to be used directly in frontend applications.
+Make sure a backend is put in between to cache the responses and prevent hitting the rate limits.
 
 The API calls are rate limited to 30 calls per minute per customer.
 This means that it combines the request count for all streams of a customer.

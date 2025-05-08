@@ -1,10 +1,20 @@
 # Livery Video Interactive API
 
-This document describes the API calls that are available to customers. These calls can be used by application administrators to retrieve restricted data.
+This page describes the API calls that are available to customers.
+These calls can be used by application administrators or developers to retrieve restricted data.
 
 For more information regarding domain & paths, ask for the URL from Livery support.
 
-## Pull restricted broadcast data
+## Rate limits
+
+These API's are not ment to be used directly in frontend applications.
+Make sure a backend is put in between to cache the responses and prevent hitting the rate limits.
+
+The API calls are rate limited to 30 calls per minute per customer.
+This means that it combines the request count for all streams of a customer.
+If this limit is exceded the server will return a response with a 429 HTTP status code.
+
+## Pull API
 
 Authorized customers are allowed to access Livery interactive restricted API calls.
 Authorization will be done via an API key that can be retrieved from the Livery interactive portal.
@@ -12,19 +22,6 @@ Authorization will be done via an API key that can be retrieved from the Livery 
 The value of the added key must be included in header `x-livery-api-key`
 
 Unless an API key is added, the customer will not be able to retrieve broadcast data.
-
-## Push restricted broadcast data
-
-On broadcast status change, it is possible to be notified of the changes. You have to add a value to `PUSH_URL`
-server setting, representing your API endpoint which will receive the data with HTTP POST.
-
-Note: Add your API endpoint URL to receive broadcast status changes. This is done via server settings update endpoint.
-
-Example of notification: 
-
-[broadcast](_customer-interactive-api/_example-Broadcast.md ':include')
-
-## API Calls
 
 Page numbers start at 0 on paginated API calls
 
@@ -173,3 +170,47 @@ curl -H "x-livery-api-key: value" https://www.example.com/services/broadcasts/{b
 Response example:
 
 [filename](_customer-interactive-api/_example-Leaderboard.md ':include')
+
+## Push API
+
+Next to the Pull API's a limited set of Push API's exist.
+These API's work the other way around where the Livery server's will do a call to a server of the customer.
+
+For each of the Push API's you can configure a push URL.
+The Livery server will do a HTTP POST request to the configured url with a request body as specified below.
+The push URL's can be configured in the `Services API settings` in the `Settings` page.
+
+The server will retry each API call maximum 5 times, with a delay of 20 seconds after each retry.
+
+### Broadcast push API
+
+The broadcast push API call will be invoked when a broadcast is opened or closed.
+This could be used to trigger the retrieval of exports for example.
+
+Example request body:
+
+[broadcast](_customer-interactive-api/_example-Broadcast.md ':include')
+
+### Leaderboard push API
+
+The leaderboard push API call will be invoked on several leaderboard related events.
+This can be at the start or end of the update process or when the persisting state changes.
+
+Leaderboards are updated in passes.
+This is done to be able to time the leaderboard updates precicely.
+For example we don't want to update user score's when the interaction results are not yet shown in the frontend.
+When we start such a leaderboard pass, this push API will be invoked with the `updatingForTriggeredByIds` array containing the id of the interaction that caused the leaderboard update.
+When the update process is done another call is done, and now the interaction id has been moved to the `updatedForTriggeredByIds` array.
+So you can see which interactions have contributed to the current leaderboard.
+
+Leaderboards also have a `state` field which can have one of the following values:
+
+- LIVE: the leaderboard is in a stable state but can change at any time
+- UPDATING: the leaderboard is currently being updated
+- FINALIZED: the leaderboard is finalized, meaning scores will not be updated anymore
+- PERSISTING: the leaderboard is being written to slower long term storage
+- PERSISTED: the leaderboard persisting process has finished
+
+Example request body:
+
+[leaderboard push](_customer-interactive-api/_example-LeaderboardPush.md ':include')
