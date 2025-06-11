@@ -115,7 +115,7 @@ You can subsequently implement custom controls using the [LiveryPlayer](/npm/pla
 
 General guidelines based on the `LiveryPlayer` API (the `InteractiveBridge` API is similar):
 
-- Wait for loading to finish (e.g: for `config` to be defined)
+- Wait for loading to finish (e.g: for `config` to be defined); while using
 - Only show playback controls when video is available (i.e: `config?.streamPhase === 'LIVE'`)
 - Only use supported `features`
 - Respect which `config?.controls` are enabled and disabled
@@ -127,21 +127,26 @@ General guidelines based on the `LiveryPlayer` API (the `InteractiveBridge` API 
 
 More specifically, from bottom to top the following layers/controls should be shown on top of the video player:
 
-- While `!config || stalled` show a loading overlay
-  - With custom controls in the interactive layer render this below your interactive content
 - Interactive layer
   - Shown by the interactive element/page within the player as configured by the server
-- While `(config?.controls.error ?? true) && !!error` show an error dialog with `error.message` and:
-  - A reload button bound to `reload()`
-  - If `features.contact && controls.contact` then show a link to the contact form in the info dialog
-  - Note: Not just when error control is enabled, but also when config has not loaded (yet) and there is an error (e.g: loading config)
-- While `!navigator.onLine` show an offline overlay
-- While `!!config && muted && (!config.controls.mute || userMuted !== 'MUTED')` show a dialog with a big unmute button
-  - Where `userMuted: 'UNSPECIFIED' | 'MUTED' | 'UNMUTED'` corresponding to your use of `setMuted()`
-    - The player persists this to storage and so should you
-- While `config?.streamPhase === 'LIVE' && playbackState === 'PAUSED' && (!config.controls.play || userPaused !== 'PAUSED')` show a dialog with a big play button
-  - Where `userPaused: 'UNSPECIFIED' | 'PAUSED' | 'UNPAUSED'` corresponding to your use of `pause()` and `play()`
-- While `config?.streamPhase === 'LIVE' && playbackState === 'ENDED'` show a dialog with message: "Stream unavailable"
+- Show only the first of the following overlays if their condition is matched:
+  1. While `!navigator.onLine` show an offline overlay
+  2. While `(config?.controls.error ?? true) && !!error` show an error overlay
+     - With `error.message` and a reload button bound to `reload()`
+     - If `features.contact && controls.contact` then show a link to the contact form in the info dialog (see below)
+     - Note: Don't just show this overlay when `controls.error === true`, but also when config has not loaded (yet) and there is an error
+       - If there was an error while loading config the default player controls will show this
+       - Unless the page around the player has set `controlsDisabled` to `true` and is rendering these custom controls
+  3. While `config?.streamPhase === 'LIVE' && playbackState === 'ENDED'` show a "Stream unavailable" overlay
+  4. While `playbackState === 'PAUSED' && config?.controls.play === false || userPaused !== 'PAUSED'` show an overlay with a big play button
+     - Where `userPaused: 'UNSPECIFIED' | 'PAUSED' | 'UNPAUSED'` corresponding to your use of `pause()` and `play()`
+  5. While `!config || stalled` show a loading overlay
+     - With custom controls in the interactive layer render this below your interactive content
+     - TODO: Refactor to separate the overlay selection method from the display in layers here
+  6. While `muted && (config?.controls.mute === false || userMuted !== 'MUTED')` show an overlay with a big unmute button
+     - Where `userMuted: 'UNSPECIFIED' | 'MUTED' | 'UNMUTED'` corresponding to your use of `setMuted()`
+  - The player persists this to storage and so should you
+- Show a controls bar with:
 - While `features.scrubber && config?.streamPhase === 'LIVE' && config.controls.scrubber` show scrubber:
   - _(to be specified, e.g: using playback details and `seek()`)_
 - While `config?.streamPhase === 'LIVE' && config.controls.play` show a pause toggle button using `paused` and `play()` or `pause()`
