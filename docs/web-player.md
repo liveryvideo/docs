@@ -127,18 +127,17 @@ General guidelines based on the `LiveryPlayer` API (the `InteractiveBridge` API 
 
 More specifically, depending on the following criteria select one (or no) overlay to show (from highest to lowest priority):
 
-  1. If `!navigator.onLine` then select the `offline` overlay
-  2. Else if `(config?.controls.error ?? true) && !!error` then select the `error` overlay
-    - Note: Not just when `controls.error === true`, but also when config has not loaded yet
-      - At that time the default player controls will show this
-      - Unless the page around the player has set `controlsDisabled` to `true`
-  3. Else if `config?.streamPhase === 'LIVE' && playbackState === 'ENDED'` then select the stream `unavailable` overlay
-  4. Else if `playbackState === 'PAUSED' && config?.controls.play === false || userPaused !== 'PAUSED'` then select the `play` overlay
-    - Where `userPaused: 'UNSPECIFIED' | 'PAUSED' | 'UNPAUSED'` corresponding to your use of `pause()` and `play()`
-  5. Else if `!config || stalled` then select the `loading` overlay
-  6. Else if `muted && (config?.controls.mute === false || userMuted !== 'MUTED')` then select the `unmute` overlay
-    - Where `userMuted: 'UNSPECIFIED' | 'MUTED' | 'UNMUTED'` corresponding to your use of `setMuted()`
-    - The player persists this to storage and so should you
+1. If `!navigator.onLine` then select the `offline` overlay
+2. Else if `(config?.controls.error ?? true) && !!error` then select the `error` overlay
+   - Note: Not just when `controls.error === true`, but also when config has not loaded yet
+   - In that case the default player controls will show this unless `controlsDisabled === true`
+3. Else if `config?.streamPhase === 'LIVE' && playbackState === 'ENDED'` then select the stream `unavailable` overlay
+4. Else if `playbackState === 'PAUSED' && config?.controls.play === false || userPaused !== 'PAUSED'` then select the `play` overlay
+   - Where `userPaused: 'UNSPECIFIED' | 'PAUSED' | 'UNPAUSED'` corresponding to your use of `pause()` and `play()`
+5. Else if `!config || stalled` then select the `loading` overlay
+6. Else if `muted && (config?.controls.mute === false || userMuted !== 'MUTED')` then select the `unmute` overlay
+   - Where `userMuted: 'UNSPECIFIED' | 'MUTED' | 'UNMUTED'` corresponding to your use of `setMuted()`
+   - The player persists this to storage and so should you
 
 Then show the following layers/controls from bottom to top on the video player:
 
