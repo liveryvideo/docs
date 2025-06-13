@@ -115,7 +115,7 @@ You can subsequently implement custom controls using the [LiveryPlayer](/npm/pla
 
 General guidelines based on the `LiveryPlayer` API (the `InteractiveBridge` API is similar):
 
-- Wait for loading to finish (e.g: for `config` to be defined); while using
+- Wait for loading to finish (e.g: for `config` to be defined)
 - Only show playback controls when video is available (i.e: `config?.streamPhase === 'LIVE'`)
 - Only use supported `features`
 - Respect which `config?.controls` are enabled and disabled
@@ -125,7 +125,7 @@ General guidelines based on the `LiveryPlayer` API (the `InteractiveBridge` API 
   - In addition to tapping or clicking anywhere in your preferred controls area
   - Immediately hide controls when pointer hover or keyboard focus leaves the player
 
-Depending on the following criteria select one (or no) overlay to show (from highest to lowest priority):
+More specifically, depending on the following criteria select one (or no) overlay to show (from highest to lowest priority):
 
   1. If `!navigator.onLine` then select the `offline` overlay
   2. Else if `(config?.controls.error ?? true) && !!error` then select the `error` overlay
