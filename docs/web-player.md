@@ -129,8 +129,8 @@ More specifically, depending on the following criteria select one (or no) overla
 
 1. If `!navigator.onLine` then select the `offline` overlay
 2. Else if `(config?.controls.error ?? true) && !!error` then select the `error` overlay
-   - Note: Not just when `controls.error === true`, but also when config has not loaded yet
-   - In that case the default player controls will show this unless `controlsDisabled === true`
+   - Note: Not just when `controls.error`, but also when config has not loaded yet
+   - In that case the default player controls will show this unless `controlsDisabled`
 3. Else if `config?.streamPhase === 'LIVE' && playbackState === 'ENDED'` then select the stream `unavailable` overlay
 4. Else if `playbackState === 'PAUSED' && config?.controls.play === false || userPaused !== 'PAUSED'` then select the `play` overlay
    - Where `userPaused: 'UNSPECIFIED' | 'PAUSED' | 'UNPAUSED'` corresponding to your use of `pause()` and `play()`
