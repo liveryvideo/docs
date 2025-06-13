@@ -125,43 +125,48 @@ General guidelines based on the `LiveryPlayer` API (the `InteractiveBridge` API 
   - In addition to tapping or clicking anywhere in your preferred controls area
   - Immediately hide controls when pointer hover or keyboard focus leaves the player
 
-More specifically, from bottom to top the following layers/controls should be shown on top of the video player:
+Depending on the following criteria select one (or no) overlay to show (from highest to lowest priority):
 
-- Interactive layer
-  - Shown by the interactive element/page within the player as configured by the server
-- Show only the first of the following overlays if their condition is matched:
-  1. While `!navigator.onLine` show an offline overlay
-  2. While `(config?.controls.error ?? true) && !!error` show an error overlay
-     - With `error.message` and a reload button bound to `reload()`
-     - If `features.contact && controls.contact` then show a link to the contact form in the info dialog (see below)
-     - Note: Don't just show this overlay when `controls.error === true`, but also when config has not loaded (yet) and there is an error
-       - If there was an error while loading config the default player controls will show this
-       - Unless the page around the player has set `controlsDisabled` to `true` and is rendering these custom controls
-  3. While `config?.streamPhase === 'LIVE' && playbackState === 'ENDED'` show a "Stream unavailable" overlay
-  4. While `playbackState === 'PAUSED' && config?.controls.play === false || userPaused !== 'PAUSED'` show an overlay with a big play button
-     - Where `userPaused: 'UNSPECIFIED' | 'PAUSED' | 'UNPAUSED'` corresponding to your use of `pause()` and `play()`
-  5. While `!config || stalled` show a loading overlay
-     - With custom controls in the interactive layer render this below your interactive content
-     - TODO: Refactor to separate the overlay selection method from the display in layers here
-  6. While `muted && (config?.controls.mute === false || userMuted !== 'MUTED')` show an overlay with a big unmute button
-     - Where `userMuted: 'UNSPECIFIED' | 'MUTED' | 'UNMUTED'` corresponding to your use of `setMuted()`
-  - The player persists this to storage and so should you
-- Show a controls bar with:
-- While `features.scrubber && config?.streamPhase === 'LIVE' && config.controls.scrubber` show scrubber:
-  - _(to be specified, e.g: using playback details and `seek()`)_
-- While `config?.streamPhase === 'LIVE' && config.controls.play` show a pause toggle button using `paused` and `play()` or `pause()`
-- While `config?.controls.mute` show a mute toggle button using `muted` and `setMuted()`
-- While `features.volume && config?.controls.mute` show a volume slider using `volume`
-- While `config?.streamPhase === 'LIVE' && config.controls.quality` show a `qualities.list` toggle:
-  - Highlighting the `qualities.active` and `qualities.selected` qualities
-  - Enabling selecting one of those or the automatic quality selection (`-1`) using `selectQuality()`
-- While `features.pip && config?.controls.pip` show a picture-in-picture toggle button using `display` and `setDisplay('PIP' | 'DEFAULT')`
-- While `features.fullscreen && config?.controls.fullscreen` show a fullscreen toggle button using `display` and `setDisplay('FULLSCREEN' | 'DEFAULT')`
-- While `features.airplay && config?.controls.airplay` show an Airplay toggle button using `display` and `setDisplay('AIRPLAY' | 'DEFAULT')`
-- While `features.chromecast && config?.controls.chromecast` show a Chromecast toggle button using `display` and `setDisplay('CHROMECAST' | 'DEFAULT')`
+  1. If `!navigator.onLine` then select the `offline` overlay
+  2. Else if `(config?.controls.error ?? true) && !!error` then select the `error` overlay
+    - Note: Not just when `controls.error === true`, but also when config has not loaded yet
+      - At that time the default player controls will show this
+      - Unless the page around the player has set `controlsDisabled` to `true`
+  3. Else if `config?.streamPhase === 'LIVE' && playbackState === 'ENDED'` then select the stream `unavailable` overlay
+  4. Else if `playbackState === 'PAUSED' && config?.controls.play === false || userPaused !== 'PAUSED'` then select the `play` overlay
+    - Where `userPaused: 'UNSPECIFIED' | 'PAUSED' | 'UNPAUSED'` corresponding to your use of `pause()` and `play()`
+  5. Else if `!config || stalled` then select the `loading` overlay
+  6. Else if `muted && (config?.controls.mute === false || userMuted !== 'MUTED')` then select the `unmute` overlay
+    - Where `userMuted: 'UNSPECIFIED' | 'MUTED' | 'UNMUTED'` corresponding to your use of `setMuted()`
+    - The player persists this to storage and so should you
+
+Then show the following layers/controls from bottom to top on the video player:
+
+- While selected, overlay `loading` with some loading indicator
+- Interactive layer as shown by the interactive element/page or by the page using a video only stream
+- While selected, one of the other overlays:
+  - Overlay `unmute` with a button bound to `setMuted(false)`
+  - Overlay `play` with a button bound to `play()`
+  - Overlay `unavailable` with a button bound to `reload()`
+  - Overlay `error` with `error.message` and a button bound to `reload()`
+    - While `features.contact && controls.contact` also link to the info dialog contact form (see below)
+  - Overlay `offline` with a button bound to `reload()`
+- Controls bar with:
+  - While `features.scrubber && config?.streamPhase === 'LIVE' && config.controls.scrubber` a scrubber:
+    - _(to be specified, e.g: using playback details and `seek()`)_
+  - While `config?.streamPhase === 'LIVE' && config.controls.play` a pause toggle button using `paused` and `play()` or `pause()`
+  - While `config?.controls.mute` a mute toggle button using `muted` and `setMuted()`
+  - While `features.volume && config?.controls.mute` a volume slider using `volume`
+  - While `config?.streamPhase === 'LIVE' && config.controls.quality` a `qualities.list` toggle:
+    - Highlighting the `qualities.active` and `qualities.selected` qualities
+    - Enabling selecting one of those or the automatic quality selection (`-1`) using `selectQuality()`
+  - While `features.pip && config?.controls.pip` a picture-in-picture toggle button using `display` and `setDisplay('PIP' | 'DEFAULT')`
+  - While `features.fullscreen && config?.controls.fullscreen` a fullscreen toggle button using `display` and `setDisplay('FULLSCREEN' | 'DEFAULT')`
+  - While `features.airplay && config?.controls.airplay` an Airplay toggle button using `display` and `setDisplay('AIRPLAY' | 'DEFAULT')`
+  - While `features.chromecast && config?.controls.chromecast` a Chromecast toggle button using `display` and `setDisplay('CHROMECAST' | 'DEFAULT')`
 - Enable showing an info dialog (currently shown on player/controls right click) with:
   - Livery player `version` from package
-  - While `features.contact && config?.controls.contact` show a contact form bound to `submitUserFeedback()`
+  - While `features.contact && config?.controls.contact` a contact form bound to `submitUserFeedback()`
 
 ### Next.js
 
