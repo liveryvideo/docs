@@ -118,6 +118,12 @@ Response example:
 [webclip](_customer-interactive-api/interactions/webclip.md ':include')
 </details>
 
+<details>
+<summary>wordGuessing</summary>
+
+[wordGuessing](_customer-interactive-api/interactions/wordGuessing.md ':include')
+</details>
+
 ### Get broadcast data
 
 This API call can be used to retrieve information about any created broadcast.
