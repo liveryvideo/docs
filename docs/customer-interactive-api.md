@@ -188,6 +188,15 @@ The push URL's can be configured in the `Services API settings` in the `Settings
 
 The server will retry each API call maximum 5 times, with a delay of 20 seconds after each retry.
 
+The requests will come from one of these IP addresses, so you could use this list for IP firewal rules:
+
+- 52.215.179.168
+- 52.31.232.94
+- 54.247.174.208
+- 100.27.160.183
+- 18.208.29.208
+- 98.82.209.116
+
 ### Broadcast push API
 
 The broadcast push API call will be invoked when a broadcast is opened or closed.
