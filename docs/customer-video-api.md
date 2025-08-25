@@ -395,17 +395,35 @@ DELETE api/1/services/streams?id=5f2022df27b35d1ebfe17b78
 Re-generate stream key for the specified customerId and streamId
 
 ```
-PUT api/2/customers/6267d661e4b0420e3acced5e/streams/626fa59fe4b018f4ecdc092c/streamkey
+PUT api/1/services/streams/{streamId}/streamkey
 ```
 
 | Parameter  | Type | Mandatory | Description             |
 | ---------- | ---- | --------- | ----------------------- |
-| customerId | Path | Yes       | The customer identifier |
 | streamId   | Path | Yes       | The stream identifier   |
 
 Response example:
 
 [filename](_customer-video-api/_example-key-re-generate-StreamResponseDTO.md ':include')
+
+### Get stream history
+
+Returns a list of StreamTime objects. These contain information about the stream when it was online.
+
+```
+GET api/1/services/streamtimes
+```
+
+| Parameter  | Type  | Mandatory | Description                                             |
+| ---------- | ----- | --------- | ------------------------------------------------------- |
+| start      | Query | Yes       | Start timestamp of search query, in milliseconds.       |
+| end        | Query | Yes       | End timestamp of search query, in milliseconds.         |
+| pageIndex  | Query | Yes       | The page index of the pagination. The first index is 1. |
+| pageSize   | Query | Yes       | The number of streams on a page                         |
+
+Response example:
+
+[filename](_customer-video-api/_example-StreamTimeDTO.md ':include')
 
 ## Push API
 
