@@ -63,7 +63,7 @@ Add these implementations inside **dependencies** to your app-level build.gradle
 ```groovy
 dependencies {
    //...
-   implementation "com.liveryvideo:livery-sdk-android:4.2.3"
+   implementation "com.liveryvideo:livery-sdk-android:4.2.4"
    //...
 }
 ```
