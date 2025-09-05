@@ -2,7 +2,7 @@
 
 [![Revision History](https://img.shields.io/badge/doc-Revision%20History-blue)](ios-sdk-changelog.md)
 
-Livery Video iOS SDK, published via CocoaPods and Swift Package Manager. For CocoaPods see [livery-sdk-ios-podspec](https://github.com/exmg/livery-sdk-ios-podspec) and for Swift Package Manager see [livery-sdk-ios-spm](https://github.com/liveryvideo/livery-sdk-ios-spm).
+Livery Video iOS SDK, published via CocoaPods and Swift Package Manager. For CocoaPods see [livery-sdk-ios-podspec](https://github.com/liveryvideo/livery-sdk-ios-podspec) and for Swift Package Manager see [livery-sdk-ios-spm](https://github.com/liveryvideo/livery-sdk-ios-spm).
 
 Documentation can be found at: [docs.livery.live/ios-sdk](ios-sdk.md).
 
@@ -52,7 +52,7 @@ To integrate Livery SDK into your Xcode project using CocoaPods, specify it in y
 
 ```ruby
 source 'https://cdn.cocoapods.org/'
-source 'https://github.com/exmg/livery-sdk-ios-podspec.git'
+source 'https://github.com/liveryvideo/livery-sdk-ios-podspec.git'
 
 target 'MyProject' do
   pod "Livery", "3.2.0"
