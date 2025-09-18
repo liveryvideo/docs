@@ -8,13 +8,11 @@ More information can be found at: [liveryvideo.com](https://liveryvideo.com).
 
 ### Compatibility
 
-Livery Android SDK is compatible with Android 5.0 (API level 21) or higher.
+Livery Android SDK is compatible with Android 6.0 (API level 23) or higher.
 
 ### Configure Gradle
 
 From version 2.0.0 onwards Livery SDK is published via [jitpack.io](https://jitpack.io).
-
-You can still use bintray repository and credentials, please follow the steps in [here](/android-installation-bintray#installation-from-bintray).
 
 To install Livery SDK into your project, follow these steps below.
 
