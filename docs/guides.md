@@ -246,7 +246,7 @@ Finalize your email and send out the campaign. Each contact will now receive an 
 ## How to live stream with Livery
 
 1. For ingesting video into Livery, enter the Ingest URL and Stream Key in your preferred streaming tool (e.g. OBS, vMix, StreamYard)
-2. Check our [recommended settings](video_ingest#mixer-soft-and-hardware) at docs.livery.live for recommended configurations
+2. Check our [recommended settings](video-ingest#mixer-soft-and-hardware) at docs.livery.live for recommended configurations
 3. Click the “Start streaming” button in the streaming tool that you are using
 4. Our cloud encoder automatically starts
 5. After ~60 seconds start-up time, the video will be visible in the player. (The player URL is provided to you or can be specified by the stream ID <https://embed.livery.live/?id>=...)

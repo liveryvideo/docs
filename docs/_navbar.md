@@ -2,7 +2,7 @@
 
 - Video
   - [Portal](/video-portal.md 'Livery Video Management Portal')
-  - [Ingest](/video_ingest.md 'Livery Video Ingest')
+  - [Ingest](/video-ingest.md 'Livery Video Ingest')
   - [Android SDK](/android-sdk.md 'Livery Video Android SDK')
   - [iOS SDK](/ios-sdk.md 'Livery Video iOS SDK')
   - [Web Player](/web-player.md 'Livery Video Web Player')
