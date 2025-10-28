@@ -190,12 +190,20 @@ The server will retry each API call maximum 5 times, with a delay of 20 seconds 
 
 The requests will come from one of these IP addresses, so you could use this list for IP firewal rules:
 
+eu-west
 - 52.215.179.168
 - 52.31.232.94
 - 54.247.174.208
+
+us-east
 - 100.27.160.183
 - 18.208.29.208
 - 98.82.209.116
+
+me-south
+- 16.24.189.67
+- 157.241.88.51
+- 157.241.36.141
 
 ### Broadcast push API
 
