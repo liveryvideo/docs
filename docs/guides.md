@@ -9,7 +9,7 @@ Stalls can occur during live streams, and identifying their root cause is often 
 
 To properly diagnose stalls, more granular data is required.
 
-### Monitoring OBS with a Third-Party Utility
+***Monitoring OBS with a Third-Party Utility***
 
 The following utility allows you to monitor an OBS Studio instance via its WebSocket connection. 
 
