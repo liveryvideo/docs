@@ -3,6 +3,48 @@
 Our comprehensive guides are designed to help you get the most out of the Livery platform. Whether you're just getting started or looking to optimize your streaming experience, you'll find step-by-step instructions, best practices, and tips to enhance your use of Livery’s powerful features.
 Explore our guides to learn how to set up and manage your account, integrate with third-party tools like Shopify, customize your streaming experience, and more. Each guide is crafted to ensure you have all the information you need to successfully leverage Livery's capabilities for your interactive live streaming needs.
 
+## Debugging Live Stream Stalls with OBS
+
+Stalls can occur during live streams, and identifying their root cause is often challenging. While OBS Studio provides basic statistics, these insights are limited—especially for low-latency streaming. When metrics are collected at intervals longer than one second, short network or performance hiccups may go unnoticed.
+
+To properly diagnose stalls, more granular data is required.
+
+### Monitoring OBS with a Third-Party Utility
+
+The following utility allows you to monitor an OBS Studio instance via its WebSocket connection. 
+
+https://github.com/joepadmiraal/metrics-for-obs/releases
+
+It collects detailed metrics such as network conditions and other performance-related data at a configurable interval. The recommended interval is **one second (default)**, which provides sufficient resolution to capture brief issues.
+
+All collected data can be exported as a **CSV file**, making it easy to analyze and share.
+
+Whenever you encounter issues with the utility tool, please report them on the OBS forum: https://obsproject.com/forum/threads/metrics-for-obs.193539/
+
+### macOS Security Notice
+
+By default, macOS may prevent the downloaded utility from opening. If this happens:
+
+1. Go to **System Settings → Privacy & Security**
+2. Allow the **metrics-for-OBS** file to be opened
+3. Retry launching the application
+
+### Connecting to OBS
+
+When the tool starts, it will prompt you for the OBS WebSocket password.
+
+- This password is configured in OBS
+- The easiest approach is to set your own WebSocket password in OBS and click **Apply** or **OK**
+- Enter the same password when prompted by the utility
+
+Once connected, the tool will begin collecting metrics automatically.
+
+### Exporting and Sharing Data
+
+When you stop the tool by pressing **Ctrl + C**, a CSV file is generated in the same directory where the utility is located.
+
+This CSV file can be shared with the **Livery team**, enabling them to gain deeper insights into what occurred during the live streaming session and to more effectively diagnose potential stalls.
+
 ## Connecting Shopify and Livery
 
 The Livery platform allows customers to connect their Shopify store account directly. This integration enables the Shopify Product Interaction feature, allowing customers to search for and pull product data from their Shopify online store. This eliminates the need to manually enter product details.
