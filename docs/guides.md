@@ -21,7 +21,7 @@ All collected data can be exported as a **CSV file**, making it easy to analyze 
 
 Whenever you encounter issues with the utility tool, please report them on the OBS forum: https://obsproject.com/forum/threads/metrics-for-obs.193539/
 
-### macOS Security Notice
+***macOS Security Notice***
 
 By default, macOS may prevent the downloaded utility from opening. If this happens:
 
@@ -29,7 +29,7 @@ By default, macOS may prevent the downloaded utility from opening. If this happe
 2. Allow the **metrics-for-OBS** file to be opened
 3. Retry launching the application
 
-### Connecting to OBS
+***Connecting to OBS***
 
 When the tool starts, it will prompt you for the OBS WebSocket password.
 
@@ -39,7 +39,7 @@ When the tool starts, it will prompt you for the OBS WebSocket password.
 
 Once connected, the tool will begin collecting metrics automatically.
 
-### Exporting and Sharing Data
+***Exporting and Sharing Data***
 
 When you stop the tool by pressing **Ctrl + C**, a CSV file is generated in the same directory where the utility is located.
 
