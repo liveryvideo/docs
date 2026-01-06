@@ -39,6 +39,9 @@ When the tool starts, it will prompt you for the OBS WebSocket password.
 
 Once connected, the tool will begin collecting metrics automatically.
 
+<img src="guides_images/obs-1.png" width="250"/>
+<img src="guides_images/obs-2.png" width="250"/>
+
 ***Exporting and Sharing Data***
 
 When you stop the tool by pressing **Ctrl + C**, a CSV file is generated in the same directory where the utility is located.
