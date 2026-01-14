@@ -185,15 +185,12 @@ The audit log search endpoint supports an optional free-text search filter.
 When provided, the filter is applied as a substring match across the following fields: actorId (e.g. admin ID), category (derived from the controller or explicitly set), entityId (the affected entity identifier)
 
 ```
-curl -X POST \
+curl -G \
   -H "x-livery-api-key: value" \
-  -H "Content-Type: application/json" \
-  https://www.example.com/services/auditlog/search \
-  -d '{
-    "startTimestamp": 1700000000000,
-    "endTimestamp": 1700003600000,
-    "search": "broadcast"
-  }'
+  --data-urlencode "startTimestamp=1700000000000" \
+  --data-urlencode "endTimestamp=1700003600000" \
+  --data-urlencode "search=broadcast" \
+  https://www.example.com/services/auditlog/search
 ```
 
 Example response:
