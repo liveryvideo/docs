@@ -177,6 +177,26 @@ Response example:
 
 [filename](_customer-interactive-api/_example-Leaderboard.md ':include')
 
+## Get audit log
+
+The audit log records who performed what action, on which entity, and when inside the Livery Interactive system.
+Customers can query audit logs for their own tenant using the Audit Log API endpoint described below.
+The audit log search endpoint supports an optional free-text search filter.
+When provided, the filter is applied as a substring match across the following fields: actorId (e.g. admin ID), category (derived from the controller or explicitly set), entityId (the affected entity identifier)
+
+```
+curl -G \
+  -H "x-livery-api-key: value" \
+  --data-urlencode "startTimestamp=1700000000000" \
+  --data-urlencode "endTimestamp=1700003600000" \
+  --data-urlencode "search=broadcast" \
+  https://www.example.com/services/auditlog/search
+```
+
+Example response:
+
+[auditLog](_customer-interactive-api/_example-AuditLogRecords.md)
+
 ## Push API
 
 Next to the Pull API's a limited set of Push API's exist.
