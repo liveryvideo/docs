@@ -159,7 +159,7 @@ Then show the following layers/controls from bottom to top on the video player:
   - While `config?.streamPhase === 'LIVE' && config.controls.quality` a `qualities.list` toggle:
     - Highlighting the `qualities.active`, `qualities.selected` and `qualities.forced` qualities
     - Enabling selecting one of those or the automatic quality selection (`-1`) using `selectQuality()`
-    - If a quality is actively being forced (`qualities.forced !== undefined`), disable user selection of a quality
+    - If a quality is actively being forced (`qualities.forced !== -1`), disable user selection of a quality
   - While `features.pip && config?.controls.pip` a picture-in-picture toggle button using `display` and `setDisplay('PIP' | 'DEFAULT')`
   - While `features.fullscreen && config?.controls.fullscreen` a fullscreen toggle button using `display` and `setDisplay('FULLSCREEN' | 'DEFAULT')`
   - While `features.airplay && config?.controls.airplay` an Airplay toggle button using `display` and `setDisplay('AIRPLAY' | 'DEFAULT')`
