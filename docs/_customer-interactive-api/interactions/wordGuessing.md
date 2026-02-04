@@ -11,17 +11,107 @@
     {
       "text": "Paris",
       "points": 100,
-      "percentage": 0.0
+      "percentage": 0.0,
+      "dimensions": [
+        {
+          "code": "CUSTOM1",
+          "label": "Province",
+          "values": [
+            {
+              "name": "NorthHolland",
+              "percentage": 4.0
+            },
+            {
+              "name": "Limburg",
+              "percentage": 2.0
+            }
+          ]
+        },
+        {
+          "code": "CUSTOM2",
+          "label": "Department",
+          "values": [
+            {
+              "name": "Management",
+              "percentage": 4.0
+            },
+            {
+              "name": "Development",
+              "percentage": 2.0
+            }
+          ]
+        }
+      ]
     },
     {
       "text": "Nice",
       "points": 20,
-      "percentage": 100.0
+      "percentage": 100.0,
+      "dimensions": [
+        {
+          "code": "CUSTOM1",
+          "label": "Province",
+          "values": [
+            {
+              "name": "NorthHolland",
+              "percentage": 4.0
+            },
+            {
+              "name": "Limburg",
+              "percentage": 2.0
+            }
+          ]
+        },
+        {
+          "code": "CUSTOM2",
+          "label": "Department",
+          "values": [
+            {
+              "name": "Management",
+              "percentage": 4.0
+            },
+            {
+              "name": "Development",
+              "percentage": 2.0
+            }
+          ]
+        }
+      ]
     },
     {
       "text": "Madrid",
       "points": 0,
-      "percentage": 0.0
+      "percentage": 0.0,
+      "dimensions": [
+        {
+          "code": "CUSTOM1",
+          "label": "Province",
+          "values": [
+            {
+              "name": "NorthHolland",
+              "percentage": 4.0
+            },
+            {
+              "name": "Limburg",
+              "percentage": 2.0
+            }
+          ]
+        },
+        {
+          "code": "CUSTOM2",
+          "label": "Department",
+          "values": [
+            {
+              "name": "Management",
+              "percentage": 4.0
+            },
+            {
+              "name": "Development",
+              "percentage": 2.0
+            }
+          ]
+        }
+      ]
     }
   ],
   "hideText": false,

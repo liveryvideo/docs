@@ -12,13 +12,73 @@
           "code": "1",
           "text": "Yes, it will rain.",
           "percentage": 100.0,
-          "correct": false
+          "correct": false,
+          "dimensions": [
+            {
+              "code": "CUSTOM1",
+              "label": "Province",
+              "values": [
+                {
+                  "name": "NorthHolland",
+                  "percentage": 4.0
+                },
+                {
+                  "name": "Limburg",
+                  "percentage": 2.0
+                }
+              ]
+            },
+            {
+              "code": "CUSTOM2",
+              "label": "Department",
+              "values": [
+                {
+                  "name": "Management",
+                  "percentage": 4.0
+                },
+                {
+                  "name": "Development",
+                  "percentage": 2.0
+                }
+              ]
+            }
+          ]
         },
         {
           "code": "2",
           "text": "No, it will not rain.",
           "percentage": 0.0,
-          "correct": false
+          "correct": false,
+          "dimensions": [
+            {
+              "code": "CUSTOM1",
+              "label": "Province",
+              "values": [
+                {
+                  "name": "NorthHolland",
+                  "percentage": 4.0
+                },
+                {
+                  "name": "Limburg",
+                  "percentage": 2.0
+                }
+              ]
+            },
+            {
+              "code": "CUSTOM2",
+              "label": "Department",
+              "values": [
+                {
+                  "name": "Management",
+                  "percentage": 4.0
+                },
+                {
+                  "name": "Development",
+                  "percentage": 2.0
+                }
+              ]
+            }
+          ]
         }
       ],
       "answerType": "TEXT",
