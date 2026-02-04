@@ -11,12 +11,72 @@
         {
           "code": "1",
           "text": "Facebook",
-          "percentage": 0.0
+          "percentage": 0.0,
+          "dimensions": [
+            {
+              "code": "CUSTOM1",
+              "label": "Province",
+              "values": [
+                {
+                  "name": "NorthHolland",
+                  "percentage": 4.0
+                },
+                {
+                  "name": "Limburg",
+                  "percentage": 2.0
+                }
+              ]
+            },
+            {
+              "code": "CUSTOM2",
+              "label": "Department",
+              "values": [
+                {
+                  "name": "Management",
+                  "percentage": 4.0
+                },
+                {
+                  "name": "Development",
+                  "percentage": 2.0
+                }
+              ]
+            }
+          ]
         },
         {
           "code": "2",
           "text": "Instagram",
-          "percentage": 100.0
+          "percentage": 100.0,
+          "dimensions": [
+            {
+              "code": "CUSTOM1",
+              "label": "Province",
+              "values": [
+                {
+                  "name": "NorthHolland",
+                  "percentage": 5.0
+                },
+                {
+                  "name": "Limburg",
+                  "percentage": 9.0
+                }
+              ]
+            },
+            {
+              "code": "CUSTOM2",
+              "label": "Department",
+              "values": [
+                {
+                  "name": "Management",
+                  "percentage": 8.0
+                },
+                {
+                  "name": "Development",
+                  "percentage": 1.0
+                }
+              ]
+            }
+          ]
         }
       ],
       "answerType": "TEXT",
