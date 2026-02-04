@@ -5,6 +5,7 @@
     "category": "adminaccount",
     "action": "updateAdmin",
     "actorType": "ADMINISTRATOR",
+    "actorName": "John Doe",
     "actorId": "2f8e3b91-6a5a-4c2e-9b8c-41b7d5f1c102",
     "entityId": "7a3c9d4e-8c1f-4b2a-9f6e-12d4e6a9c321",
     "value": "{\"email\":\"john.doe@company.com\",\"firstName\":\"John\",\"lastName\":\"Doe\"}",
