@@ -11,7 +11,6 @@
     "value": "{\"email\":\"john.doe@company.com\",\"firstName\":\"John\",\"lastName\":\"Doe\"}",
     "tenantId": "5b6e9a2f-3c1d-4f8a-9e21-7c9a4d2f8b10",
     "timestamp": 1717068123456
-  },
-  ...
+  }
 ]
 ```

@@ -177,7 +177,7 @@ Response example:
 
 [filename](_customer-interactive-api/_example-Leaderboard.md ':include')
 
-## Get audit log
+### Get audit log
 
 The audit log records who performed what action, on which entity, and when inside the Livery Interactive system.
 Customers can query audit logs for their own tenant using the Audit Log API endpoint described below.
@@ -195,7 +195,7 @@ curl -G \
 
 Example response:
 
-[auditLog](_customer-interactive-api/_example-AuditLogRecords.md)
+[auditLog](_customer-interactive-api/_example-AuditLogRecords.md ':include')
 
 ## Push API
 
