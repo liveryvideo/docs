@@ -100,7 +100,7 @@ If this is an internal or single-store integration:
    
    <img src="guides_images/shopify_install.png" width="500"/>
    
-4. Choose or enter the shop.
+4. Choose or create a new shop.
    
    <img src="guides_images/shopify_shop.png" width="500"/>
    
