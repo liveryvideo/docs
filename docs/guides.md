@@ -3,6 +3,8 @@
 Our comprehensive guides are designed to help you get the most out of the Livery platform. Whether you're just getting started or looking to optimize your streaming experience, you'll find step-by-step instructions, best practices, and tips to enhance your use of Livery’s powerful features.
 Explore our guides to learn how to set up and manage your account, integrate with third-party tools like Shopify, customize your streaming experience, and more. Each guide is crafted to ensure you have all the information you need to successfully leverage Livery's capabilities for your interactive live streaming needs.
 
+---
+
 ## Debugging Live Stream Stalls with OBS
 
 Stalls can occur during live streams, and identifying their root cause is often challenging. While OBS Studio provides basic statistics, these insights are limited—especially for low-latency streaming. When metrics are collected at intervals longer than one second, short network or performance hiccups may go unnoticed.
@@ -48,6 +50,8 @@ When you stop the tool by pressing **Ctrl + C**, a CSV file is generated in the 
 
 This CSV file can be shared with the **Livery team**, enabling them to gain deeper insights into what occurred during the live streaming session and to more effectively diagnose potential stalls.
 
+---
+
 ## Connecting Shopify and Livery
 The Livery platform allows customers to connect their Shopify store directly to their Livery account.
 
@@ -63,15 +67,11 @@ When using Shopify Product Interaction:
 - The live stream continues in **Picture-in-Picture mode**, ensuring viewers don’t miss any content.
 - All information collected via **Livery’s SSO** is automatically added to the Shopify purchase form, minimizing transaction effort.
 
----
-
-# Connecting Your Shopify Account
+**Connecting Your Shopify Account**
 
 Follow the steps below to connect your Shopify store to Livery.
 
----
-
-## Step 1: Create the App in the Shopify Dev Dashboard
+***Step 1: Create the App in the Shopify Dev Dashboard***
 
 1. Go to the Shopify Developer Dashboard:  
    https://dev.shopify.com/dashboard/
@@ -81,9 +81,8 @@ Follow the steps below to connect your Shopify store to Livery.
 5. Save the app.
 6. Install the app directly from the Developer Dashboard.
 
----
 
-## Step 2: Install the App (Internal / Single-Store Integration)
+***Step 2: Install the App (Internal / Single-Store Integration)***
 
 If this is an internal or single-store integration:
 
@@ -92,9 +91,7 @@ If this is an internal or single-store integration:
 3. Choose or enter the shop.
 4. Approve the requested permissions.
 
----
-
-## Step 3: Configure Credentials in the Livery Plugin
+***Step 3: Configure Credentials in the Livery Plugin***
 
 1. Open the app in the Dev Dashboard.
 2. Go to **Settings**.
@@ -110,6 +107,7 @@ If this is an internal or single-store integration:
 ⚠️ **Important:**  
 Use the shop’s `*.myshopify.com` domain (not a custom domain).
 
+---
 
 ## Add streaming support (SRT)
 
@@ -262,6 +260,8 @@ streamer.release()
 
 For more details check [StreamPack](https://github.com/ThibaultBee/StreamPack) quick start guide.
 
+---
+
 ## Use the Frictionless login in combination with MailChimp
 
 Livery's [Unverified Frictionless Auth](frictionless-login.md) (based on OpenId), in combination with its Query Parameter support, is a perfect tool for a smooth transition from personal marketing messages, such as emails, to active participation in an Interactive Live Broadcast. The user is automatically logged in once they navigate to the Livery interactive client via the URL, and with the use of Livery's Custom Dimensions, additional data can be passed along and stored on the user's profile. The following 5 steps explain how to set this up in combination with [MailChimp](https://mailchimp.com/).
@@ -310,6 +310,8 @@ Finalize your email and send out the campaign. Each contact will now receive an 
 4. Our cloud encoder automatically starts
 5. After ~60 seconds start-up time, the video will be visible in the player. (The player URL is provided to you or can be specified by the stream ID <https://embed.livery.live/?id>=...)
 
+---
+
 ## WebClip example list
 
 The WebClip interaction is an integrated iframe within the interactive layer of our live-streaming solution, facilitating the seamless embedding of external web content directly into live streams. This feature enhances engagement by dynamically incorporating diverse content types, such as articles, videos, and collaborative documents, in real-time. Explore WebClip to elevate interactivity and audience engagement in your live-streaming sessions. For detailed instructions on how to utilize popular websites with the WebClip, refer to the table below.
@@ -339,7 +341,9 @@ The WebClip interaction is an integrated iframe within the interactive layer of 
 | Youtube       | Play video                          | Full size                                                                               | To share a YouTube video, click on “Share” below the video, then select “Embed” and copy the link from the iframe code.                                                                       |
 | Zoom          | Have an online meeting              | Full size                                                                               | To share a Zoom call, create a new meeting and copy the invite link.                                                                                                                          |
 
-# How to create an interactive broadcast
+---
+
+## How to create an interactive broadcast
 
 1. You receive an email for account activation that enables you to access the Livery portal.
 2. In the portal, press the button +CREATE in the middle of your screen or press the button +ADD in the top right corner to add a broadcast.
@@ -410,7 +414,9 @@ Step 4: Close the window and you can add additional attributes, such as the dime
 
 <img src="guides_images/wix4.png" width="500"/>
 
-# Livery IDs explained
+---
+
+## Livery IDs explained
 The Livery solution uses multiple IDs to connect all of its elements together. The IDs referenced throughout our documentation and solution include:
 
 - StreamId
@@ -419,22 +425,22 @@ The Livery solution uses multiple IDs to connect all of its elements together. T
 - UserId
 - Sub
 
-## StreamId
+### StreamId
 The StreamId is used by the player SDK to load the correct configuration. This configuration specifies details such as which stream to play (m3u8 and MPD URLs), the interactive client URL, and other player-specific information.
 
 For example, if the web player SDK is implemented on multiple websites using the same StreamId, it will behave consistently across those sites. If different StreamId values are used, you can display different configurations or information on each site.
 
-## TenantId
+### TenantId
 The TenantId is a unique identifier within the Livery interactive solution, think of it as a customer ID. Each Livery customer is assigned a unique TenantId, which is included in the interactive client URL. This ensures that the interactions users see belong to the correct customer.
 
 A single TenantId can be linked to one or more StreamId values. In other words, the interactive client URL (which contains the TenantId) is part of the player configuration and loads alongside its respective video URLs. This setup allows you to use the same interactive client across multiple StreamId values, such as for multiple camera angles of a single event or different languages, all while using the same interactive features.
 
 It is also possible to load the interactive client URL directly, outside the video player SDKs. This is done to provide a second screen experience or for Hybrate events. 
 
-## BroadcastId
+### BroadcastId
 The BroadcastId is unique to a specific interactive broadcast, which has a defined start and end time. During the broadcast, the customer can collect and store interactive and game data. Each TenantId can only have one active (open) BroadcastId at a time, although multiple BroadcastId values can exist in different states (e.g., "new" or "closed").
 
-## UserId and Sub
+### UserId and Sub
 The UserId is a unique identifier generated by the Livery solution, scoped to a specific tenant. The same UserId can appear in multiple BroadcastId contexts if the user has participated in more than one broadcast.
 
 The Sub is a user identifier provided by the customer, which must also be unique. Its primary purpose is to map Livery UserId values to user IDs from third-party login systems, ensuring consistent user identification across different platforms.
