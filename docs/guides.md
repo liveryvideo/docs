@@ -49,53 +49,67 @@ When you stop the tool by pressing **Ctrl + C**, a CSV file is generated in the 
 This CSV file can be shared with the **Livery team**, enabling them to gain deeper insights into what occurred during the live streaming session and to more effectively diagnose potential stalls.
 
 ## Connecting Shopify and Livery
+The Livery platform allows customers to connect their Shopify store directly to their Livery account.
 
-The Livery platform allows customers to connect their Shopify store account directly. This integration enables the Shopify Product Interaction feature, allowing customers to search for and pull product data from their Shopify online store. This eliminates the need to manually enter product details.
+This integration enables the **Shopify Product Interaction** feature, which allows customers to:
 
-With the Shopify Product Interaction, the link directs viewers to a specific product in your store while the live stream continues in Picture-in-Picture mode, ensuring they don’t miss anything. All information collected via Livery’s SSO is automatically added to the Shopify purchase form, minimizing the effort needed for transactions.
+- Search for products directly from their Shopify store  
+- Automatically pull product data into Livery  
+- Eliminate the need to manually enter product details  
 
-To connect your Shopify account, follow these steps:
+When using Shopify Product Interaction:
 
-***Enable the Shopify Plugin:***
-- Log into Livery’s online management portal.
-- Go to the Plugins section in the main menu and find the Shopify plugin.
-  
-<img src="guides_images/shopify_1.png" width="250"/>
-- Enabling the plugin requires a Shopify Domain and Shopify API Access Token.
+- Viewers are directed to a specific product page in your store.
+- The live stream continues in **Picture-in-Picture mode**, ensuring viewers don’t miss any content.
+- All information collected via **Livery’s SSO** is automatically added to the Shopify purchase form, minimizing transaction effort.
 
-<img src="guides_images/shopify_2.png" width="250"/>
+---
 
-**1) Find Your Shopify Domain:**
-- Log into your Shopify portal.
-- Navigate to the Settings menu and select Domains.
-  
-<img src="guides_images/shopify_3.png" width="150"/>
-- Copy the domain of your Shopify store and paste it into the appropriate field in the Livery portal. Only the `myshopify.com` domains are supported by Shopify, so alias domains are not supported.
+# Connecting Your Shopify Account
 
-**2) Create a Storefront Access Token:**
-- Go to the Settings menu in your Shopify portal and select Apps and Sales Channels.
-- Click Develop apps.
-- Click Create App, enter an App Name (this can be anything), and choose an App Developer from the dropdown menu.
-- Configure the 'Admin API integration' permissions in the Configuration tab. Livery requires two permissions:
-  - Product Listings - "read_product_listings"
-  - Products - "read_products"
-    
-<img src="guides_images/shopify_4.png" width="250"/>
-- Configure the 'Storefront API integration' permissions in the Configuration tab. Livery requires one permission:
-  - Products - "unauthenticated_read_product_listings"
-    
-<img src="guides_images/shopify_7.png" width="250"/>
+Follow the steps below to connect your Shopify store to Livery.
 
-- After setting the permissions, go to the API Credentials tab.
-- Install the newly created app by clicking Install App.
-  
-<img src="guides_images/shopify_5.png" width="250"/>
-- Once the app is installed, you can reveal and copy the access token. The token starts with "shpat_" followed by an ID. Note that you can only reveal this token once.
-  
-<img src="guides_images/shopify_6.png" width="250"/>
-- Copy the token and paste it into the Shopify Token field in the Livery plugin section.
+---
 
-With both the domain and the token is it possible to enable the plugin. A new Interaction type is now available for selection and use.
+## Step 1: Create the App in the Shopify Dev Dashboard
+
+1. Go to the Shopify Developer Dashboard:  
+   https://dev.shopify.com/dashboard/
+2. Click **Create App**
+3. Give your app a name.
+4. Configure the following **Admin API scopes**: read_product_listings, read_products, unauthenticated_read_product_inventory, unauthenticated_read_product_listings
+5. Save the app.
+6. Install the app directly from the Developer Dashboard.
+
+---
+
+## Step 2: Install the App (Internal / Single-Store Integration)
+
+If this is an internal or single-store integration:
+
+1. Open the app in the Dev Dashboard.
+2. Click **Install App**.
+3. Choose or enter the shop.
+4. Approve the requested permissions.
+
+---
+
+## Step 3: Configure Credentials in the Livery Plugin
+
+1. Open the app in the Dev Dashboard.
+2. Go to **Settings**.
+3. Retrieve:
+   - `client_id`
+   - `client_secret`
+4. Open the Shopify plugin inside the **Livery Portal**.
+5. Configure:
+   - Client ID  
+   - Client Secret  
+   - Store domain  
+
+⚠️ **Important:**  
+Use the shop’s `*.myshopify.com` domain (not a custom domain).
+
 
 ## Add streaming support (SRT)
 
