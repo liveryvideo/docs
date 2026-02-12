@@ -76,10 +76,13 @@ Follow the steps below to connect your Shopify store to Livery.
 1. Go to the Shopify Developer Dashboard:  
    https://dev.shopify.com/dashboard/
 2. Click **Create App**
-3. Give your app a name.
-4. Configure the following **Admin API scopes**: read_product_listings, read_products, unauthenticated_read_product_inventory, unauthenticated_read_product_listings
-5. Save the app.
-6. Install the app directly from the Developer Dashboard.
+   <img src="guides_images/shopify_create.png" width="500"/>
+4. Give your app a name.
+   <img src="guides_images/shopify_name.png" width="500"/>
+6. Configure the following **Admin API scopes**: read_product_listings, read_products, unauthenticated_read_product_inventory, unauthenticated_read_product_listings
+   <img src="guides_images/shopify_permission.png" width="500"/>
+8. Save the app.
+9. Install the app directly from the Developer Dashboard.
 
 
 ***Step 2: Install the App (Internal / Single-Store Integration)***
@@ -88,8 +91,10 @@ If this is an internal or single-store integration:
 
 1. Open the app in the Dev Dashboard.
 2. Click **Install App**.
-3. Choose or enter the shop.
-4. Approve the requested permissions.
+   <img src="guides_images/shopify_install.png" width="500"/>
+4. Choose or enter the shop.
+   <img src="guides_images/shopify_shop.png" width="500"/>
+6. Approve the requested permissions.
 
 ***Step 3: Configure Credentials in the Livery Plugin***
 
@@ -98,6 +103,7 @@ If this is an internal or single-store integration:
 3. Retrieve:
    - `client_id`
    - `client_secret`
+   <img src="guides_images/shopify_key.png" width="500"/>
 4. Open the Shopify plugin inside the **Livery Portal**.
 5. Configure:
    - Client ID  
