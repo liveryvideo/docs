@@ -54,6 +54,10 @@ To retrieve your access token log into <http://jitpack.io> with your GitHub acco
 Your GitHub account has to be granted access to the packages.
 If you are unable to access the packages please ask your support contact to grant you access.
 
+<p align="center">
+<img src="android/jitpack_access_token.png" width="500"/>
+</p>
+
 #### Add Implementations
 
 Add these implementations inside **dependencies** to your app-level build.gradle.
@@ -111,7 +115,7 @@ Please note that **keepScreenOn** attribute is optional and it defines whether
 screen can turn off after an amount of time or not.
 
 ```xml
-<tv.exmg.livery.LiveryPlayerView
+<com.liveryvideo.sdk.LiveryPlayerView
    android:id="@+id/liveryPlayer"
    android:layout_width="match_parent"
    android:layout_height="wrap_content"
