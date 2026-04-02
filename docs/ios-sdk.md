@@ -55,7 +55,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/liveryvideo/livery-sdk-ios-podspec.git'
 
 target 'MyProject' do
-  pod "Livery", "3.3.5"
+  pod "Livery", "3.4.0"
 end
 ```
 
@@ -503,25 +503,39 @@ This message will appear as part of the iOS Local Network Access dialog when the
 
 On the interactive layer you can use the [Interactive Bridge](/interactive-bridge) to communicate with the Livery Player. Please see the [Interactive Bridge](/interactive-bridge) documentation for more details on how to use it on the interactive layer side.
 
-Besides the [methods](/interactive-bridge?id=methods) already definied on the Interactive Bridge to get values like the player **latency**, device **orientation**, etc. you can get and send custom messages.
+Besides the [methods](/interactive-bridge?id=methods) already definied on the Interactive Bridge to get values like the player **latency**, device **orientation**, etc. you can authenticate and get and send custom messages.
+
+Any messages sent from the interactive layer through the bridge will be received on the player side by implementing the `LiveryInteractiveBridgeDelegate` protocol.
+
+```swift
+playerView.interactiveDelegate = self
+```
+
+**Note**: The LiveryPlayerView `interactiveBridgeDelegate` and the protocol `LiveryInteractiveBridgeCustomCommandDelegate` are marked as deprecated and will be removed in future versions. Please implement the `LiveryInteractiveBridgeDelegate` protocol instead.
+
+### Authentication
+
+- Is is possiblet o authenticate either with a `token` or with a any desired `claims`:
+
+```swif
+playerView.setInteractiveAuth(token: "token")
+```
+
+or
+
+```swif
+playerView.setInteractiveAuth(claims: ["sub": "userId"])
+```
+
+- As well as clear any previous authentication.
+
+```swif
+playerView.clearInteractiveAuth()
+```
+
+Any authentication errors will be received on the protocol `LiveryInteractiveBridgeDelegate` method `interactiveBridgeAuthError`.
 
 ### Custom Messages
-
-- To **GET** custom messages you should implement the `LiveryInteractiveBridgeCustomCommandDelegate` by calling:
-
-```swift
-playerView.interactiveBridgeDelegate = self //being self the class that conforms to the LiveryInteractiveBridgeCustomCommandDelegate protocol
-```
-
-#### LiveryInteractiveBridgeCustomCommandDelegate
-
-```swift
-public protocol LiveryInteractiveBridgeCustomCommandDelegate: class {
-    func getCustomMessageValue(message name: String, arg: Any?, completionHandler: @escaping (_ value: Any?) -> Void)
-}
-```
-
-There you will get the custom messages you sent through the bridge on the interactive layer. You can use the name and the arg paramenters to better recognize the message itself and act on it by calling the `completionHandler` with a value that will be send back to the interactive layer.
 
 - To **SEND** custom messages you should call:
 
@@ -537,6 +551,21 @@ public enum LiveryInteractiveBridgeCustomCommandResult {
     case failure(error: String)
 }
 ```
+
+- To **GET** and **RESPONSE** to custom messages you should implement the `LiveryInteractiveBridgeDelegate` protocol method `interactiveBridgeCustomMessage`.
+
+#### LiveryInteractiveBridgeDelegate
+
+```swift
+public protocol LiveryInteractiveBridgeDelegate: class {
+  func interactiveBridgeAuthError(_ error: String)
+  func interactiveBridgeCustomMessage(message name: String, arg: Any?, completionHandler: @escaping (_ value: Any?) -> Void)
+}
+```
+
+Any authentication errors will be received on the `interactiveBridgeAuthError` method.
+
+In the `interactiveBridgeCustomMessage` method you will get the custom messages you sent through the bridge on the interactive layer. You can use the name and the arg paramenters to better recognize the message itself and act on it by calling the `completionHandler` with a value that will be send back to the interactive layer.
 
 ## Picture in Picture
 

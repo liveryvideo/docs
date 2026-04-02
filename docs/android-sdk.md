@@ -65,7 +65,7 @@ Add these implementations inside **dependencies** to your app-level build.gradle
 ```groovy
 dependencies {
    //...
-   implementation "com.liveryvideo:livery-sdk-android:4.4.0"
+   implementation "com.liveryvideo:livery-sdk-android:4.5.0"
    //...
 }
 ```
@@ -574,7 +574,45 @@ String url = ...
 playerView.setInteractiveUrl(url);
 ```
 
-Besides the [methods](/interactive-bridge?id=methods) already definied on the Interactive Bridge to get values like the player **latency**, **quality**, etc. you can get and send custom messages.
+Besides the [methods](/interactive-bridge?id=methods) already definied on the Interactive Bridge to get values like the player **latency**, **quality**, etc. you can authenticate and get and send custom messages.
+
+Any messages sent from the interactive layer through the bridge will be received on the player side via `LiveryInteractiveBridgeListener`.
+
+```java
+playerView.setInteractiveListener(new LiveryInteractiveBridgeListener() {
+   @Override
+   public void onAuthError(String error) {
+   }
+
+   @Override
+   public void onCustomMessage(@NonNull String name, @Nullable Object arg, @Nullable LiveryInteractiveBridge.CustomCommandResultCallback callback) {
+   }
+});
+```
+
+**Note**: The LiveryPlayerView `setInteractiveBridgeCustomCommandListener` and `LiveryInteractiveBridge.CustomCommandListener` are marked as deprecated and will be removed in future versions. Please use `LiveryInteractiveBridgeListener` instead.
+
+### Authentication
+
+- Is is possiblet o authenticate either with a `token` or with a any desired `claims`:
+
+```java
+playerView.setInteractiveAuth("token");
+```
+
+or
+
+```java
+playerView.setInteractiveAuth(Collections.singletonMap("sub", "userId"));
+```
+
+- As well as clear any previous authentication.
+
+```java
+playerView.clearInteractiveAuth();
+```
+
+Any authentication errors will be received via `LiveryInteractiveBridgeListener.onAuthError` method.
 
 ### Custom commands
 
@@ -593,16 +631,18 @@ playerView.sendInteractiveBridgeCustomCommand(name, argument, new LiveryInteract
 });
 ```
 
-To receive callbacks from the interactive layer a `LiveryInteractiveBridge.CustomCommandListener` object needs to be
-register with the `setInteractiveBridgeCustomCommandListener`
-method.
-The commands are received on `onMessage` with the `name`, `argument` and a `callback`
+To receive callbacks from the interactive layer use the `LiveryInteractiveBridgeListener.onCustomMessage`.
+The commands are received on `onCustomMessage` with the `name`, `argument` and a `callback`
 that allows to sent back to the interactive layer a result Object:
 
 ```java
-playerView.setInteractiveBridgeCustomCommandListener(new LiveryInteractiveBridge.CustomCommandListener() {
+playerView.setInteractiveListener(new LiveryInteractiveBridgeListener() {
    @Override
-   public void onMessage(@NonNull String name, @Nullable Object argument, @Nullable LiveryInteractiveBridge.CustomCommandResultCallback callback) {
+   public void onAuthError(String error) {
+   }
+
+   @Override
+   public void onCustomMessage(@NonNull String name, @Nullable Object arg, @Nullable LiveryInteractiveBridge.CustomCommandResultCallback callback) {
       ...
       Object result = ...
       callback.result(result);
