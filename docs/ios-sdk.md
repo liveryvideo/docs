@@ -28,13 +28,11 @@ machine sdk-ios-binaries.livery.live
 
 #### About Livery and its dependencies
 
-Livery uses AWSPinpoint, Sentry, Kronos, Lottie and GoogleCast SDKs as dependencies.
-
-In both CocoaPods and Swift Package Manager installations AWSPinpoint is linked dynamically.
-
-However GoogleCast is linked statically, along with its dependency Protobuf. This has to be with the fact that GoogleCast SDK is not available via Swift Package Manager and the only oficial way to use it is via CocoaPods using Google's static xcframework.
+Livery uses Sentry, Kronos, Lottie and GoogleCast SDKs as dependencies.
 
 Sentry, Kronos and Lottie are linked dynamically in the CocoaPods xcframework and statically in the Swift Package Manager xcframework.
+
+However GoogleCast is linked statically, along with its dependency Protobuf. This has to be with the fact that GoogleCast SDK is not available via Swift Package Manager and the only oficial way to use it is via CocoaPods using Google's static xcframework.
 
 If your application uses one of Sentry, Kronos or Lottie we advise to use the CocoaPods installation method to avoid duplicated symbols issues.
 
@@ -203,6 +201,7 @@ enum LiveryErrors: LocalizedError {
 | `disableSentryStaticMethodsUsage`      | `Bool`                                         | `false`                        | A Bool which disabled `SentrySDK` static methos usage. A SentryHub is still created. |
 | `audioSessionSettings`                 | [`LivertAudioSessionSettings`](#audio-session) | `LivertAudioSessionSettings()` | Property to store the `AVAudioSession` settings.                                     |
 | `minimumDeviceSpace`                   | `Int`                                          | `20000000`                     | Minimum device space in bytes required for the SDK to work properly.                 |
+| `endpointId`                           | `String`                                       |                                | A getter to retrieve the endpoint ID.                                                |
 
 #### disableSentry
 
@@ -241,6 +240,14 @@ If your application wants to play another audio, besides the one from the live s
 
 ```swift
 LiverySDK.audioSessionSettings?.options = [.mixWithOthers]
+```
+
+#### Livery endpoint ID
+
+In some cases, getting the endpoint ID can be useful to look at user specific analytics. To do so, here is how to get the endpoint ID:
+
+```swift
+let endpointId = LiverySDK.endpointId
 ```
 
 ## LiveryPlayerView
@@ -578,20 +585,6 @@ The simplest way to configure it is by selecting your app’s target in Xcode an
 <p align="center">
 <img src="iOS/xcode_background_modes.png" width="500"/>
 </p>
-
-## Analytics
-
-Our SDK makes use of [Amazon Pinpoint](https://aws.amazon.com/pinpoint/).
-
-If you are not using the AWSPinpoint in your own application there's no need to include this on your Podfile since this dependency is included in our SDK.
-
-Note:
-
-- If your application already contains AWSPinpoint make sure its version matches the one used in the SDK, which is:
-
-```
-  pod 'AWSPinpoint', '~> 2.33'
-```
 
 ## Migration Guide
 
