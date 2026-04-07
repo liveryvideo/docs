@@ -28,30 +28,35 @@ The poll interaction is meant to prepare poll or vote questions with one questio
 
 Key features:
 
-- Up to 4 answers to the questions
-- Time limit for answers
-
-##### Answer visuals
-
-<p align="center">
-<img src="portal/poll_image_2024-2.png" width="400"/>
-</p>
+- Up to 4 answers in vertical, 6 answers in grid or 20 answers in a dropdown layout
+- Grid layout supports text, image or emoji answer options
+- Custom background colour on answers
+- Optional time limit for answers
+- Optional hiding of the question text
+- Optional forcing of the interaction to the foreground
 
 #### Trivia
 
 <p align="center">
 <img src="portal/trivia_2024-2.png" width="400"/>
 </p>
-The trivia interaction is meant to prepare trivia questions with one question and multiple answers where the correct answer(s) are marked. Eventual points will be calculated based on the player’s answers and optionally the time of answer, and these points will affect their position in the leaderboard.
+The trivia interaction is meant to prepare trivia questions with one question and multiple answers where the correct answer(s) are marked. Eventual points will be calculated based on the player’s answers and optionally the time of answer or odds or waged amount, and these points will affect their position in the leaderboard.
 
 Key features:
 
-- Up to 4 answers to the questions
+- Up to 4 answers in vertical, 6 answers in grid or 20 answers in a dropdown layout
+- Grid layout supports text, image or emoji answer options
+- Custom background colour on answers
 - Optional time limit for answers
 - Optionally attached points
 - Leaderboard results
 - Showing percentage of provided answers
 - Optional time-based scoring
+- Optional odds can be added
+- Optional betting can be configured
+- Optional hiding of the question text
+- Optional forcing of the interaction to the foreground
+- Show/hide the percentage of the results
 
 #### Estimation poll
 
@@ -63,7 +68,11 @@ The estimation poll interaction is meant to prepare questions with answers withi
 Key features:
 
 - Slider or free value input
-- Column diagram of result
+- Line diagram of result
+- Optional time limit for answers
+- Optional hiding of the question text
+- Optional forcing of the interaction to the foreground
+- Show/hide the percentage of the results
 
 #### Rating
 
@@ -78,13 +87,16 @@ Key features:
 - Attached image
 - Rating result override
 - Link to product items
+- Optional time limit for answers
+- Optional hiding of the question text
+- Optional forcing of the interaction to the foreground
 
 #### Announcement
 
 <p align="center">
 <img src="portal/announcement-2024-2.png" width="400"/>
 </p>
-The announcement interaction is meant to prepare quick announcements with title and subtitle. This is shown only one time in the front-end, after the interaction disappears and can't be rewatched.
+The announcement interaction is meant to prepare quick announcements with title and subtitle. This is shown only one time in the front-end, later the interaction disappears and can't be rewatched.
 
 Key features:
 
@@ -97,18 +109,18 @@ Key features:
 <p align="center">
 <img src="portal/pip-2024-2.png" width="400"/>
 </p>
-When an announcement or product item has a button which opens an external link, picture in picture mode of the video can be configured.
+When an announcement, product item or shopify product item has a button which opens an external link, picture in picture mode of the video can be configured.
 
 #### Live reaction
 
 <p align="center">
-<img src="portal/live-reaction-2024-2.png" width="400"/>
+<img src="portal/live-reaction-2025.png" width="400"/>
 </p>
-To offer the option to express feelings during the broadcast these live reaction emojis can be shown.
+To offer the option to express feelings during the broadcast, live reaction emojis can be shown.
 
 Key features:
 
-- Up to 5 emojis in the selector
+- Up to 5 emojis can be added in the selector from a standard list of emojis
 - Unlimited sent reactions during broadcast
 
 #### Countdown
@@ -120,7 +132,7 @@ The countdown indicates how much time is left before the broadcast event is star
 
 Key features:
 
-- Data and time selector in the web-based management system
+- Date and time selector in the web-based management system
 - Audience can already interact before the time is up
 - Configurable title
 - Configurable message for the last 60 seconds
@@ -149,6 +161,7 @@ Key features:
 - Approve, answer options of questions
 - Show/hide in Client and/or Presenter view
 - Rate limit on question submission (avoid spamming)
+- Enable/disable q&a in the web-based management system
 - Pinning
 - Filtering
 - Search
@@ -179,7 +192,7 @@ Key features:
 
 - Slider or free value input
 - Score deduction per steps
-- Optional time-based scoring
+- Optional time-based scoring or no-points setup
 
 #### Prediction
 
@@ -190,17 +203,28 @@ The prediction interaction is meant to prepare questions with one question and m
 
 Key features:
 
-- Up to 4 answers to the questions
-- Time limit for answers
-- Attached points
+- Up to 4 answers in vertical, 6 answers in grid or 20 answers in a dropdown layout
+- Grid layout supports text, image or emoji answer options
+- Custom background colour on answers
+- Optional time limit for answers
+- Optionally attached points
 - Leaderboard results
+- Showing percentage of provided answers
 - Optional time-based scoring
+- Optional odds can be added
+- Optional betting can be configured
+- Optional hiding of the question text
+- Optional forcing of the interaction to the foreground
+- Show/hide the percentage of the results
 
 #### Estimation prediction
 <!--
 <p align="center">
 <img src="portal/estimates_2024-2.png" width="400"/>
 </p> -->
+<p align="center">
+<img src="portal/estimates_2024-2.png" width="400"/>
+</p>
 The estimation prediction interaction is meant to prepare questions with answers within an interval where the correct answer is not yet known. Points will be calculated based on the player’s answers and these points will affect their position in the leaderboard.
 
 Key features:
@@ -208,6 +232,9 @@ Key features:
 - Slider or free value input
 - Score deduction per steps
 - Optional time-based scoring
+- Optional hiding of the question text
+- Optional forcing of the interaction to the foreground
+- Show/hide the percentage of the results
   
 #### Leaderboard
 
@@ -246,14 +273,24 @@ Key features:
 
 - easy integration on plugin page
 - available product data is pulled in automatically
+- optional notification can be added
   
 #### Webclip
 
 <p align="center">
 <img src="portal/webclip_2024-2.png" width="400"/>
 </p>
+With the webclip interaction external content can be embed in the interactive client
 
 #### Captions and subtitles
+AI generated captions can be added to the stream.
+
+Key features:
+
+- easy integration on plugin page
+- integration with Rev.ai or Speechmatics
+- subtitles can be shown/hidden by the end-user
+- language selector in client
 
 #### Social share (coming soon)
 <p align="center">
@@ -281,6 +318,7 @@ Once you have a broadcast defined, you can start to add interactions to it to fi
 | Stream              | The list of available stream in case Livery Video is configured                      |
 | Theme               | The selected branding of the interactive layer                                       |
 | Locale              | The locale which defines how the currencies, amounts and date/time will be formatted |
+| Starting points     | The points which every user will start with when they join the broadcast             |
 | Enabled features    | All the features and pages which you’d like to show to your audience                 |
 
 The web-based management system allows you to manage your broadcasts and get an overview of your previous items.
@@ -289,6 +327,7 @@ Key features:
 
 - Use default authentication method
 - Select your locale
+- Define starting points
 - Start/stop your broadcast anytime you want
 - Select a theme for your branding
 - Show/Hide features and pages
@@ -376,10 +415,13 @@ Key features:
 - Leaderboard top 10
 
 #### Q&A overview
+In the management portal all submitted questions can be approved, answered and shown to the users or the presenter.
 
 #### Interaction forcing
+Forcing to the foreground can be set on interaction level in the management portal. Default tenant setting can be added.
 
 #### Interaction and Broadcast scheduling
+Every broadcast and interaction can be scheduled by setting start- and end-time to their phases in the management portal. 
 
 #### Data export
 
