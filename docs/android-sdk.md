@@ -310,12 +310,12 @@ You can get the instance with the line below:
 LiverySDK.getInstance();
 ```
 
-### Pinpoint User ID
+### Livery Endpoint ID
 
-In some cases, getting the pinpoint user ID can be useful, i.e.: You would like to show the user their pinpoint user ID for analysis based on a specific user. To do so, here is how to get the pinpoint user ID:
+In some cases, getting the endpoint ID can be useful to look at user specific analytics. To do so, here is how to get the endpoint ID:
 
 ```java
-String pinpointUserId = LiverySDK.getInstance().getPinpointUserId();
+String endpointId = LiverySDK.getInstance().getEndpointId();
 ```
 
 ## Player Methods
