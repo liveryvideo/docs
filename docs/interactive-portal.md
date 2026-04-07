@@ -235,7 +235,7 @@ Key features:
 - Optional hiding of the question text
 - Optional forcing of the interaction to the foreground
 - Show/hide the percentage of the results
-  
+
 #### Leaderboard
 
 <p align="center">
@@ -274,13 +274,32 @@ Key features:
 - easy integration on plugin page
 - available product data is pulled in automatically
 - optional notification can be added
-  
+
 #### Webclip
 
 <p align="center">
 <img src="portal/webclip_2024-2.png" width="400"/>
 </p>
 With the webclip interaction external content can be embed in the interactive client
+
+#### Word guessing
+
+<p align="center">
+<img src="portal/wordguessing_2025.png" width="400"/>
+</p>
+The word guessing interaction is meant to prepare questions with one question and multiple answers where the correct answer(s) are defined. Eventual points will be calculated based on the player’s answers and these points will affect their position in the leaderboard.
+
+Key features:
+
+- Up to 8 correct answers
+- For each answer up to 10 synonyms
+- Synonyms can be AI generated
+- Fuzzy loginc for typos or misspelled answers
+- Optional time limit for answers
+- Optional attached points per answer
+- Leaderboard results
+- Optional hiding of the question text
+- Optional forcing of the interaction to the foreground
 
 #### Captions and subtitles
 AI generated captions can be added to the stream.
