@@ -273,11 +273,9 @@ they will override the corresponding remote configurations.
 
 ```
 
-
 #### LiveryPlayerView controls options
 
 The LiveryPlayerView controls can also be configured with either remote or local configurations. When local configurations are set
-
 
 ```java
    LiveryPlayerView playerView = ...
@@ -295,7 +293,6 @@ The LiveryPlayerView controls can also be configured with either remote or local
    playerView.setControlsOptions(controlsOptions);
 
 ```
-
 
 ## SDK Methods
 
@@ -594,7 +591,7 @@ playerView.setInteractiveListener(new LiveryInteractiveBridgeListener() {
 
 ### Authentication
 
-- Is is possiblet o authenticate either with a `token` or with a any desired `claims`:
+- It is possible to authenticate either with a `token` or with a any desired `claims`:
 
 ```java
 playerView.setInteractiveAuth("token");
@@ -684,10 +681,3 @@ Sentry usage by LIverySDK can be disabled by setting `livery_enable_sentry` reso
 ## Migration Guide
 
 #### [Migration from 3.2 to 4.0](/android-migration-4#migration-from-32-to-40)
-
-#### [Migration from 2.4 to 3.0](/android-migration-3#migration-from-24-to-30)
-
-#### [Migration from 1.7 to 2.0](/android-migration-2#migration-from-17-to-20)
-
-
-## Q&A
