@@ -9,19 +9,21 @@
   "scripts": {
     "format": "markdownlint \"**/*.md\" --fix && prettier \"**/*.{html,md}\" --write",
     "lint": "markdownlint \"**/*.md\" && prettier \"**/*.{html,md}\" --check",
-    "start": "live-server docs --entry-file=index.html"
+    "start": "serve docs --single"
   },
   "devDependencies": {
-    "husky": "^9.1.5",
-    "lint-staged": "^15.2.9",
-    "live-server": "^1.2.0",
-    "markdownlint-cli": "^0.39.0",
-    "prettier": "^3.3.3"
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "markdownlint-cli": "^0.48.0",
+    "prettier": "^3.8.2"
   },
   "lint-staged": {
     "*.md": [
       "markdownlint --fix",
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "serve": "^14.2.6"
   }
 }
