@@ -522,21 +522,21 @@ playerView.interactiveDelegate = self
 
 ### Authentication
 
-- Is is possiblet o authenticate either with a `token` or with a any desired `claims`:
+- It is possible to authenticate either with a `token` or with a list of `claims`:
 
-```swif
+```swift
 playerView.setInteractiveAuth(token: "token")
 ```
 
 or
 
-```swif
+```swift
 playerView.setInteractiveAuth(claims: ["sub": "userId"])
 ```
 
 - As well as clear any previous authentication.
 
-```swif
+```swift
 playerView.clearInteractiveAuth()
 ```
 

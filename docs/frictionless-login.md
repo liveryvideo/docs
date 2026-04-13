@@ -2,7 +2,7 @@
 
 Frictionless authentication is a feature that allows users to be granted authorization without requiring them to manually interact with the Livery Interactive Client. For instance, if a user is logged into a customer's platform and there is a Livery Video Player on a web page within that platform, the page can pass a set of credentials to the Livery Video Player, and the Interactive Client will automatically log the user into the Livery system. As a result, the end user doesn't need to log in to the Livery system separately from the surrounding platform, making the authentication process `Frictionless`. This feature also supports including profile fields together with the authentication token. Please note that when a user edits their information within the Livery system, the surrounding context won`t be informed.
 
-Livery accommodates Verified and Unverified Frictionless authentication. The delivery mechanisms are almost the same for both variants. A query parameter or Javascript method can be used to provide a JWT token that contains the user profile and authentication information. In case of `Verified` frictionless the provided JWT token is signed with either the RS256 or HS256 algorithm. With HS256 the secret is shared between the identity provider and Livery, which requires the least amount of effort but is less secure. With RS256 the identity provider generates the JWT's with a private key and only shares the public key with Livery. `Unverified` frictionless allows the customer to provide the profile fields directly, without the need of a token. Or alternatively it can provide the details via an unsigned JWT token. This approach requires less effort but does not allow account recovery or login on multiple devices and it's not secure.
+Livery accommodates Verified and Unverified Frictionless authentication. The delivery mechanisms are almost the same for both variants. A JWT token can be provided that contains the user profile and authentication information. In case of `Verified` frictionless the provided JWT token is signed with either the RS256 or HS256 algorithm. With HS256 the secret is shared between the identity provider and Livery, which requires the least amount of effort but is less secure. With RS256 the identity provider generates the JWTs with a private key and only shares the public key with Livery. `Unverified` frictionless allows the customer to provide the profile fields directly, without the need of a token. Or alternatively it can provide the details via an unsigned JWT token. This approach requires less effort but does not allow account recovery or login on multiple devices and it's not secure.
 
 ## Generating tokens
 
@@ -13,7 +13,7 @@ The examples of this page assume you are using this tool, but any other JWT gene
 
 This is an example of what a payload might look like when only the `sub` and `preferred_username` claim are supplied.
 
-```
+```json
 {
   "sub": "1234567890",
   "preferred_username": "John Doe"
@@ -23,9 +23,9 @@ This is an example of what a payload might look like when only the `sub` and `pr
 In order to generate a HS256 token you can fill in the secret and the JWT token is ready to use.
 
 In order to generate a RS256 token you first need to create a public/private key pair.
-One of the ways you can do this is by using the ssk-keygen command line tool:
+One of the ways you can do this is by using the ssh-keygen command line tool:
 
-```
+```bash
 ssh-keygen -t rsa -b 4096 -m PEM -f jwtRS256.key
 # Don't add passphrase
 openssl rsa -in jwtRS256.key -pubout -outform PEM -out jwtRS256.key.pub
@@ -45,31 +45,71 @@ Some of Livery`s Profile fields/claims, like Phone number or Email address, can 
 
 ## Authenticating
 
-The user-data (Token or Claims) can be provided via a Javascript method or as part of the URL initializing the interactive client.
 
-Javascript method example of Unverified Frictionless:
+### Using the Livery video player
 
+<!-- tabs:start -->
+#### **Web Player**
+
+The web player allows providing the token or auth claims via the [interactiveAuth](/npm/player/dist/classes/LiveryPlayer?id=interactiveauth) property.
+JavaScript example of setting the token:
+
+```js
+player.interactiveAuth = 'eyJhbG...';
 ```
-setLiveryUser({sub: '1234', preferred_username: 'Livery'})
+
+JavaScript example of setting the auth claims:
+
+```js
+player.interactiveAuth = {sub: '1234', preferred_username: 'Livery'};
 ```
 
-Javascript method example of Verified Frictionless:
+It also allows providing the token or auth claims via the query parameters of the page on which the player is loaded.
+This is useful to support personalized mailings from which the user links directly to the Livery experience with its username or other claims already prefilled.
 
-```
-setLiveryUser({token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiSGVsbCBvIn0.fgzQ8ps0S63kiD_fQ5F2uEN4IQyufN2pkorwW0fCBSEqpV14GOSdV4cgk4MLYGE'})
-```
-
-Query parameter method example of Unverified Frictionless:
+Query parameter example with auth claims:
 
 ```
 ...&livery_sub=12345&livery_preferred_username=Livery
 ```
 
-Query parameter method example of Verified Frictionless:
+Query parameter example with a token:
 
 ```
-…&livery_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiSGVsbCBvIn0.fgzQ8ps0S63kiD_fQ5F2uEN4IQyufN2pkorwW0fCBSEqpV14GOSdV4cgk4MLYGE
+...&livery_token=eyJhbG...
 ```
 
-The query parameter or Javascript method can be used to create new users or to update the existing user-data. To update individual fields, the data is merged with the existing user data (as long as the `sub` field remains unchanged). If the value of a field is undefined, it indicates that the value shouldn't change.
+#### **Android Player**
+
+The Android player allows providing the token or auth claims via the [setInteractiveAuth](/android-sdk?id=authentication) method.
+Java example of setting the token:
+
+```java
+playerView.setInteractiveAuth("eyJhbG...");
+```
+
+Java example of setting the auth claims:
+
+```java
+playerView.setInteractiveAuth(Map.of("sub", "1234", "preferred_username", "Livery"));
+```
+
+#### **iOS Player**
+
+The iOS player allows providing the token or auth claims via the [setInteractiveAuth](/ios-sdk?id=authentication) method.
+Swift example of setting the token:
+
+```swift
+playerView.setInteractiveAuth(token: "eyJhbG...")
+```
+
+Swift example of setting the auth claims:
+
+```swift
+playerView.setInteractiveAuth(claims: ["sub": "1234", "preferred_username": "Livery"])
+```
+
+<!-- tabs:end -->
+
+The token or claims can be used to create new users or to update the existing user-data. To update individual fields, the data is merged with the existing user data (as long as the `sub` field remains unchanged). If the value of a field is undefined, it indicates that the value shouldn't change.
 If the `sub` value is different from the previous call or is null, the client will log the user out and create a new user. This allows end-users to switch accounts on a customer's platform without overwriting user data in the Livery system. This means that when using Unverified frictionless, every account switch will create a new user on the Livery system and it will not be possible to log back in on the previously created account.
