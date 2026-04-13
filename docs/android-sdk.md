@@ -591,7 +591,7 @@ playerView.setInteractiveListener(new LiveryInteractiveBridgeListener() {
 
 ### Authentication
 
-- It is possible to authenticate either with a `token` or with a any desired `claims`:
+- It is possible to authenticate either with a `token` or with a map of `claims`:
 
 ```java
 playerView.setInteractiveAuth("token");
