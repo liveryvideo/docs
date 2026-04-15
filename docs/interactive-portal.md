@@ -101,6 +101,7 @@ The announcement interaction is meant to prepare quick announcements with title 
 Key features:
 
 - Quick announcement
+- Option for auto or manual closing
 - Image upload
 - Button with external url
 
@@ -281,6 +282,13 @@ Key features:
 <img src="portal/webclip_2024-2.png" width="400"/>
 </p>
 With the webclip interaction external content can be embed in the interactive client
+
+Key features:
+
+- Custom size and position
+- Optional hiding of the close button
+- Optional dragging and resizing options
+- Optional permission configuration for features. I.e. microphone, camera
 
 #### Word guessing
 
