@@ -39,11 +39,13 @@ Copy the public and private key in the corresponding fields of jwt.io and the JW
 
 ## Enabling Frictionless Authentication
 
-Configure the HS256 secret or RS256 public key in the portal's `Settings` under `Authentication Settings`.
+To use Verified Frictionless Authentication, you must first configure a secret before setting up the authentication method. Configure either an HS256 secret or an RS256 public key in the portal under `Settings` → `Authentication Settings`.
 
-To use Verified or Unverified Frictionless Authentication it should be added to the `Authentication methods` in the `Authentication Templates` which can be found in the `Authentication requirements` menu in the Livery Interactive Portal. It's not possible to use both Verified and Unverified methods simultaneously. The authentication template's configured profile fields, or user claims, should align with those provided during frictionless login. If either the token or the query parameters misses any of the required claims, Livery`s Interactive Client will show the missing data screen.
+To use Verified or Unverified Frictionless Authentication, add the method to `Authentication methods` within an `Authentication Templates`, located in the `Authentication requirements` section of the Livery Interactive Portal. Verified and Unverified methods cannot be used simultaneously.
 
-Some of Livery`s Profile fields/claims, like Phone number or Email address, can be verified. Verification flags can only be applied through verified tokens, and updating data without these flags reverts the status to unverified.
+The profile fields (user claims) configured in the authentication template must match those provided during frictionless login. If any required claims are missing from the token or query parameters, the Livery Interactive Client will display a “missing data” screen.
+
+Some profile fields, such as phone number or email address, can be verified. Verification flags are only applied through verified tokens. Updating these fields without verification flags will reset their status to unverified.
 
 ## Authenticating
 
