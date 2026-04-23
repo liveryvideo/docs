@@ -27,7 +27,9 @@ One of the ways you can do this is by using the ssh-keygen command line tool:
 
 ```bash
 ssh-keygen -t rsa -b 4096 -m PEM -f jwtRS256.key
-# Don't add passphrase
+```
+ __*Don't add passphrase*__
+```bash
 openssl rsa -in jwtRS256.key -pubout -outform PEM -out jwtRS256.key.pub
 cat jwtRS256.key
 cat jwtRS256.key.pub
