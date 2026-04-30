@@ -16,8 +16,9 @@ Pass Through can be enabled via the Encoder settings in the portal. It is import
 
 - Disabling B-frames
 - Enabling a fixed keyframe interval of 1 second
-- Using the H.264 codec
+- Using the x264 codec
 - Setting the rate control to CBR
+- x264 Options "keyint=25 min-keyint=25 scenecut=0"
 
 ## On-prem encoder
 
