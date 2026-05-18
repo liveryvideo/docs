@@ -91,7 +91,9 @@ Swift Package Manager is distributed with Xcode. To add the Livery SDK to your i
 
 ## Usage
 
-For basic usage of the SDK use the following minimal steps:
+The `LiveryPlayerView` can be created either manually in code or by using Interface Builder. In both cases, the `LiverySDK.initialize()` method needs to be called before calling `LiveryPlayerView.createPlayer()`.
+
+The following code snippet shows the minimal steps to start a stream with the Livery iOS SDK:
 
 ```swift
 import Livery
@@ -125,6 +127,12 @@ func start(streamId: String = "yourStreamId") async {
 At this point, the player will fetch the DASH manifest, start rendering by automatically synching to the targetLatency set in the remote config or the LiveryPlayerOptions (3 seconds default).
 For more information about options, properties and methods please see relevant sections below.
 For a sample application code utilizing these minimal steps see the LiveryExample sample application section.
+
+The player can be stopped by calling the `stop()` method:
+
+```swift
+playerView.stop()
+```
 
 ## Livery SDK
 
