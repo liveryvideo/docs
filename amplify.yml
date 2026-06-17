@@ -4,6 +4,7 @@ frontend:
     build:
       commands:
         - node generate-llms.mjs
+        - node generate-sitemap.mjs
   artifacts:
     baseDirectory: /docs
     files:

@@ -10,7 +10,9 @@
     "format": "markdownlint \"**/*.md\" --fix && prettier \"**/*.{html,md}\" --write",
     "lint": "markdownlint \"**/*.md\" && prettier \"**/*.{html,md}\" --check",
     "llms": "node generate-llms.mjs",
-    "start": "npm run llms && serve docs --single"
+    "sitemap": "node generate-sitemap.mjs",
+    "generate": "npm run llms && npm run sitemap",
+    "start": "npm run generate && serve docs --single"
   },
   "devDependencies": {
     "husky": "^9.1.7",

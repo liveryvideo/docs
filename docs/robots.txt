@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# LLM-friendly content (llms.txt standard)
+# https://docs.livery.live/llms.txt
+# https://docs.livery.live/llms-full.txt
+
+
+Sitemap: https://docs.livery.live/sitemap.xml
