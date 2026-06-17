@@ -1,5 +1,9 @@
 version: 0.1
 frontend:
+  phases:
+    build:
+      commands:
+        - node generate-llms.mjs
   artifacts:
     baseDirectory: /docs
     files:
