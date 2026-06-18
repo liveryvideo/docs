@@ -1,6 +1,6 @@
 # Livery Video Docs
 
-This repository contains the Markdown files that are converted to the [online documentation](https://docs.liveryvideo.com).
+This repository contains the Markdown files that are converted to the [online documentation](https://docs.livery.live).
 
 The Markdown is converted to HTML via [Docsify](https://docsify.js.org).
 The Markdown is checked with markdownlint and prettier when doing a commit.
