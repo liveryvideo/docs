@@ -49,7 +49,7 @@ The Livery players connect to the following domains. The domains need to be whit
 
 - time.akamai.com
 - cdn.livery.live
-- ip.livery.live
+- a.livery.live
 - amazonaws.com
 
 #### When using jsdelivr
