@@ -66,6 +66,8 @@ The Livery players connect to the following domains. The domains need to be whit
 ##### Europe
 
 - livery-ull-test.akamaized.net
+- livery-global-eu.akamaized.net
+- livery-global-eu-hl.akamaized.net
 
 ##### South America
 
@@ -74,6 +76,8 @@ The Livery players connect to the following domains. The domains need to be whit
 ##### United States of America General
 
 - livery-us.akamaized.net
+- livery-global-us.akamaized.net
+- livery-global-us-hl.akamaized.net
 
 ##### United States of America East Cost
 
