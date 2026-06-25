@@ -29,7 +29,7 @@ If you're not bundling your own JS you can just use an HTML snippet like this:
 
 This package exports two bundles.
 
-The ES `module` bundle is targetted at modern browsers and tools supporting `ES2019`.
+The ES `module` bundle is targetted at modern browsers and tools supporting `ES2022` since v7.20.0 (`ES2019` before that).
 
 The UMD `main` bundle (as used by jsdelivr [CDN](#cdn)) supports the last 2 major versions of: Chrome, Safari, Edge, Firefox, Android Chrome, iOS Safari and Samsung Internet.
 
