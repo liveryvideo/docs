@@ -124,6 +124,7 @@ General guidelines based on the `LiveryPlayer` API (the `InteractiveBridge` API 
   - Consider hovering as activity with pointer devices and keyboard focus with keyboard inputs
   - In addition to tapping or clicking anywhere in your preferred controls area
   - Immediately hide controls when pointer hover or keyboard focus leaves the player
+- When `performanceMode` is `'LOW'` limit resource usage to enable the browser to become responsive, e.g: disable graphical effects
 
 More specifically, depending on the following criteria select one (or no) overlay to show (from highest to lowest priority):
 
