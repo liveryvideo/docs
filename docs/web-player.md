@@ -128,7 +128,7 @@ General guidelines based on the `LiveryPlayer` API (the `InteractiveBridge` API 
 
 More specifically, depending on the following criteria select one (or no) overlay to show (from highest to lowest priority):
 
-1. If `!navigator.onLine` then select the `offline` overlay
+1. If `!(online || playing)` then select the `offline` overlay
 2. Else if `(config?.controls.error ?? true) && !!error` then select the `error` overlay
    - Note: Not just when `controls.error`, but also when config has not loaded yet
    - In that case the default player controls will show this unless `controlsDisabled`
