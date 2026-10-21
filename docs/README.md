@@ -50,6 +50,7 @@ The Livery players connect to the following domains. The domains need to be whit
 - time.akamai.com
 - cdn.livery.live
 - a.livery.live
+- *.akamaized.net
 
 #### When using jsdelivr
 
@@ -59,36 +60,6 @@ The Livery players connect to the following domains. The domains need to be whit
 
 - embed.livery.live
 - jsdelivr.net
-
-#### Region dependent
-
-##### Europe
-
-- livery-ull-test.akamaized.net
-- livery-global-eu.akamaized.net
-- livery-global-eu-hl.akamaized.net
-
-##### South America
-
-- livery-sa2.akamaized.net
-
-##### United States of America General
-
-- livery-us.akamaized.net
-- livery-global-us.akamaized.net
-- livery-global-us-hl.akamaized.net
-
-##### United States of America East Cost
-
-- livery-us-east.akamaized.net
-
-##### Asia Pacific and Japan
-
-- livery-apj.akamaized.net
-
-##### EMEA other and United Arab Emirates
-
-- livery-other-emea.akamaized.net
 
 #### RTMP/SRT
 
